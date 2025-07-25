@@ -153,10 +153,11 @@
 
         /* Hamburger Menu */
         .hamburger {
-            display: none;
+            display: none; /* Hidden by default, shown in media query for mobile */
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
+            padding: 5px; /* Added padding for easier tapping */
         }
 
         .hamburger .bar {
@@ -186,7 +187,8 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: none; /* Removed background image for video */
+            /* Background image as a fallback for video */
+            background: url('https://placehold.co/1920x1080/1a1a2e/4ecdc4?text=Home+Background+Image') no-repeat center center / cover;
             overflow: hidden;
         }
 
@@ -360,28 +362,28 @@
             background-image: url('https://placehold.co/1920x1080/1a1a2e/4ecdc4?text=About+Background');
         }
         #experience {
-            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+            background-image: url('https://unique-pen.github.io/images/picture3.jpeg');
         }
         #skills {
-            background-image: url('https://placehold.co/1920x1080/34495e/9b59b6?text=Skills+Background');
+            background-image: url('https://unique-pen.github.io/images/picture1.jpeg');
         }
         #certifications {
-            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+            background-image: url('https://unique-pen.github.io/images/picture3.jpeg);
         }
         #courses {
-            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+            background-image: url('https://unique-pen.github.io/images/picture5.jpeg');
         }
         #projects {
-            background-image: url('https://placehold.co/1920x1080/9b59b6/3498db?text=Projects+Background');
+            background-image: url('https://unique-pen.github.io/images/picture4.jpeg');
         }
         #testimonials {
-            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+            background-image: url('https://unique-pen.github.io/images/picture2.jpeg');
         }
         #pricing {
-            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+            background-image: url('https://unique-pen.github.io/images/picture3.jpeg');
         }
         #contact {
-            background-image: url('https://placehold.co/1920x1080/7f8c8d/bdc3c7?text=Contact+Background');
+            background-image: url('https://unique-pen.github.io/images/picture5.jpeg');
         }
 
         .section-container {
@@ -1051,6 +1053,8 @@
                 border-top: 1px solid var(--glass-border);
                 padding: 1rem 0;
                 align-items: center;
+                max-height: calc(100vh - 75px); /* Ensure menu is scrollable */
+                overflow-y: auto; /* Enable vertical scrolling */
             }
 
             .nav-links.active {
@@ -1383,7 +1387,7 @@
     <section class="hero" id="home">
         <!-- Video background element -->
         <video autoplay loop muted class="hero-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-artificial-intelligence-human-head-4977-large.mp4" type="video/mp4">
+            <source src="https://unique-pen.github.io/images/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
