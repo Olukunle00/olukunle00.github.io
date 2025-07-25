@@ -1024,6 +1024,12 @@
                 flex: 0 0 90%; /* Adjust for smaller screens */
                 min-width: 90%;
             }
+            .testimonials-track { /* Apply animation duration here for mobile */
+                animation: scrollTestimonials 60s linear infinite; /* Slower on mobile */
+            }
+            .testimonial-text {
+                font-size: 1rem; /* Reduced font size for mobile */
+            }
             @keyframes scrollTestimonials {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(calc(-100% * 4)); } /* Adjust for relative width */
