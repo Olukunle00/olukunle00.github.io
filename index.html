@@ -301,7 +301,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem; /* Adjusted gap for more space */
         }
 
         .nav-links a {
@@ -309,7 +309,7 @@
             text-decoration: none;
             font-weight: 500;
             position: relative;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.8rem; /* Adjusted padding */
             transition: all 0.3s ease;
         }
 
@@ -597,7 +597,7 @@
             position: relative;
             background-size: cover; /* Ensure background image covers the section */
             background-position: center center;
-            background-attachment: fixed; /* Parallax effect for sections */
+            /* Removed background-attachment: fixed; for better mobile compatibility */
             color: var(--text-primary); /* Ensure text color is appropriate for dark mode */
         }
         body.light-mode .section {
@@ -1307,8 +1307,9 @@
             .stats-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
+            /* Adjusted gap for nav links on medium screens */
             .nav-links {
-                gap: 1rem;
+                gap: 0.8rem; 
             }
         }
 
