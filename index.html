@@ -6,7 +6,7 @@
     <title>Olukunle Portfolio - AI & Education Portfolio</title>
     <meta name="description" content="Olukunl Samson Oluwatosin: AI Technology Expert, Lead Tutor, Teachers Trainer, and Edtechpreneur. Empowering education and youth development with innovative AI solutions.">
     <meta name="keywords" content="AI, Artificial Intelligence, Education, Edtech, Teacher Trainer, Youth Mentorship, Online Teaching, Portfolio, Olukunle Samson Oluwatosin">
-
+    
     <meta property="og:type" content="website">
     <meta property="og:url" content="YOUR_PORTFOLIO_URL_HERE">
     <meta property="og:title" content="Olukunle (Samson) Oluwatosin - AI & Education Portfolio">
@@ -16,9 +16,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+        
         :root {
-            /* Dark Mode Colors */
+            /* Dark Mode Colors (only mode now) */
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --accent-gradient: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
@@ -28,186 +28,7 @@
             --text-secondary: rgba(255, 255, 255, 0.8);
             --accent-color: #4ecdc4;
             --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-
-            /* Light Mode Colors - Adjusted for better fit */
-            --light-bg: #f8f9fa; /* Very light grey */
-            --light-text-primary: #212529; /* Dark grey for primary text */
-            --light-text-secondary: #495057; /* Medium grey for secondary text */
-            --light-glass-bg: rgba(255, 255, 255, 0.7); /* More opaque white glass */
-            --light-glass-border: rgba(0, 0, 0, 0.08); /* Subtle border */
-            --light-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08); /* Lighter shadow */
-            --light-accent-color: #007bff; /* A vibrant blue for accent */
-            --light-primary-gradient: linear-gradient(135deg, #e0f2f7 0%, #cce7f2 100%); /* Light blue gradient */
-            --light-accent-gradient: linear-gradient(45deg, #007bff, #00c6ff); /* Blue to light blue gradient */
         }
-
-        /* Light Mode Styles */
-        body.light-mode {
-            background: var(--light-bg);
-            color: var(--light-text-primary);
-        }
-        body.light-mode .nav {
-            background: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
-            border-bottom-color: var(--light-glass-border);
-        }
-        body.light-mode .nav-links a {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .nav-links a:hover {
-            color: var(--light-accent-color); /* Use light accent color */
-        }
-        body.light-mode .hero {
-            /* Background image for light mode hero */
-            background: url('https://placehold.co/1920x1080/e0f2f7/007bff?text=Your+Home+Background+Image') no-repeat center center / cover;
-            position: relative;
-        }
-        body.light-mode .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.6); /* Semi-transparent white overlay */
-            z-index: 1;
-        }
-        body.light-mode .hero-content {
-            z-index: 2; /* Ensure content is above overlay */
-        }
-        body.light-mode .hero-subtitle,
-        body.light-mode .hero-title,
-        body.light-mode .hero-description {
-            color: var(--light-text-primary); /* Ensure text is readable over light background */
-            -webkit-text-fill-color: var(--light-text-primary); /* Override transparent text for title */
-            background: none; /* Remove gradient for title */
-        }
-        body.light-mode .hero-title {
-            background: var(--light-accent-gradient); /* Re-apply gradient with light accent */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        body.light-mode .section {
-            background: var(--light-bg);
-        }
-        body.light-mode .about {
-            background: linear-gradient(135deg, #f0f4f7 0%, #f8f9fa 100%); /* Lighter gradient */
-        }
-        body.light-mode .about-text p {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .section-description {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .stat-card,
-        body.light-mode .skill-card,
-        body.light-mode .project-card,
-        body.light-mode .experience-card,
-        body.light-mode .certification-card,
-        body.light-mode .course-card,
-        body.light-mode .testimonial-card,
-        body.light-mode .contact-item,
-        body.light-mode .contact-form,
-        body.light-mode .pricing-card { /* Added pricing card */
-            background: var(--light-glass-bg);
-            border-color: var(--light-glass-border);
-            box-shadow: var(--light-shadow-lg);
-        }
-        /* Apply hover effect to all relevant cards in light mode */
-        body.light-mode .skill-card:hover,
-        body.light-mode .project-card:hover,
-        body.light-mode .experience-card:hover,
-        body.light-mode .certification-card:hover,
-        body.light-mode .course-card:hover,
-        body.light-mode .stat-card:hover,
-        body.light-mode .pricing-card:hover { /* Added pricing card */
-            box-shadow: var(--light-shadow-lg);
-            border-color: var(--light-accent-color); /* Use light accent color */
-        }
-        /* Swipe effect for light mode */
-        body.light-mode .skill-card::before,
-        body.light-mode .project-card::before,
-        body.light-mode .experience-card::before,
-        body.light-mode .certification-card::before,
-        body.light-mode .course-card::before,
-        body.light-mode .pricing-card::before,
-        body.light-mode .stat-card::before { /* Added stat card */
-            background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.1), transparent); /* Light accent color for swipe */
-        }
-
-        body.light-mode .skill-card p,
-        body.light-mode .project-content p,
-        body.light-mode .testimonial-text,
-        body.light-mode .author-info p,
-        body.light-mode .experience-card p,
-        body.light-mode .certification-card p,
-        body.light-mode .course-card p {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .experience-card .duration,
-        body.light-mode .certification-card .issued-date {
-            color: rgba(0, 0, 0, 0.6);
-        }
-        body.light-mode .form-group label {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .form-group input,
-        body.light-mode .form-group textarea {
-            background: rgba(0, 0, 0, 0.05);
-            border-color: var(--light-glass-border);
-            color: var(--light-text-primary);
-        }
-        body.light-mode .form-group input::placeholder,
-        body.light-mode .form-group textarea::placeholder {
-            color: rgba(0, 0, 0, 0.4);
-        }
-        body.light-mode .testimonials {
-            background: linear-gradient(135deg, #e0e5ea 0%, #f0f2f5 100%); /* Lighter gradient */
-        }
-        body.light-mode .contact {
-            background: linear-gradient(135deg, #f0f4f7 0%, #f8f9fa 100%); /* Lighter gradient */
-        }
-        body.light-mode .stat-number,
-        body.light-mode .skill-icon,
-        body.light-mode .project-content h3,
-        body.light-mode .pricing-card h3,
-        body.light-mode .pricing-card ul li i,
-        body.light-mode .contact-item i,
-        body.light-mode .course-icon {
-            color: var(--light-accent-color); /* Use light accent color */
-            background: none; /* Remove gradient if present */
-            -webkit-text-fill-color: var(--light-accent-color); /* Ensure color for text clips */
-        }
-        body.light-mode .skill-icon,
-        body.light-mode .course-icon {
-            background: var(--light-accent-gradient); /* Re-apply gradient with light accent */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        body.light-mode .cta-button {
-            background: var(--light-accent-gradient); /* Use light accent gradient */
-        }
-        body.light-mode .cta-secondary {
-            border-color: var(--light-accent-color);
-            color: var(--light-accent-color);
-        }
-        body.light-mode .cta-secondary:hover {
-            background: var(--light-accent-color);
-            color: white;
-        }
-        body.light-mode .project-link {
-            border-color: var(--light-accent-color);
-            color: var(--light-accent-color);
-        }
-        body.light-mode .project-link:hover {
-            background: var(--light-accent-color);
-            color: white;
-        }
-        body.light-mode #backToTopBtn {
-            background-color: var(--light-accent-color);
-        }
-
 
         * {
             margin: 0;
@@ -277,10 +98,6 @@
             padding: 15px 5%;
         }
 
-        body.light-mode .nav.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-        }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -348,9 +165,6 @@
             background-color: var(--text-primary);
             transition: all 0.3s ease;
         }
-        body.light-mode .hamburger .bar {
-            background-color: var(--light-text-primary);
-        }
 
         .hamburger.active .bar:nth-child(2) {
             opacity: 0;
@@ -364,68 +178,6 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* Dark/Light Mode Toggle */
-        .theme-switch-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .theme-switch {
-            display: inline-block;
-            height: 28px;
-            position: relative;
-            width: 50px;
-        }
-
-        .theme-switch input {
-            display: none;
-        }
-
-        .slider {
-            background-color: #ccc;
-            bottom: 0;
-            cursor: pointer;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            background-color: #fff;
-            bottom: 4px;
-            content: "";
-            height: 20px;
-            left: 4px;
-            position: absolute;
-            transition: .4s;
-            width: 20px;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: var(--accent-color);
-        }
-        body.light-mode input:checked + .slider {
-            background-color: var(--light-accent-color); /* Light mode accent */
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(22px);
-        }
-        .theme-switch i {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-        body.light-mode .theme-switch i {
-            color: var(--light-text-secondary);
-        }
-
-
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -434,8 +186,19 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: url('images/background.jpeg') no-repeat center center / cover;
+            background: none; /* Removed background image for video */
             overflow: hidden;
+        }
+
+        /* Video background styles */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the entire container */
+            z-index: -1; /* Place video behind content */
         }
 
         .hero::before {
@@ -448,9 +211,6 @@
             background: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
             z-index: 1;
         }
-        body.light-mode .hero::before {
-            background: rgba(255, 255, 255, 0.6); /* Light overlay for text readability */
-        }
 
         .hero-content {
             position: relative;
@@ -459,7 +219,6 @@
             padding: 0 2rem;
         }
 
-        /* Removed opacity and animation from hero-subtitle and hero-title */
         .hero-subtitle {
             font-size: 1.2rem;
             color: var(--accent-color);
@@ -489,7 +248,6 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            /* Quote specific styles */
             font-style: italic;
             font-weight: 500;
             padding: 1rem 2rem;
@@ -497,24 +255,8 @@
             background: rgba(255, 255, 255, 0.08); /* Subtle background for quote */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            position: relative; /* For horizontal movement */
-            white-space: nowrap; /* Keep text on one line */
-            overflow: hidden; /* Hide overflow for marquee effect */
-        }
-
-        /* Marquee effect for hero description */
-        .hero-description span {
-            display: inline-block;
-            padding-left: 100%; /* Start off-screen */
-            animation: marquee 15s linear infinite;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        body.light-mode .hero-description {
-            background: rgba(0, 0, 0, 0.08);
-            border-left-color: var(--light-accent-color);
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Ensure full text is visible */
         }
 
         .hero-cta {
@@ -586,20 +328,61 @@
             }
         }
 
-        /* Floating Elements - Removed as background image is now used */
-        .floating-shapes {
-            display: none; /* Hide floating shapes when background image is active */
-        }
-
         /* Section Styles */
         .section {
             padding: 8rem 5%;
             position: relative;
-        }
-        body.light-mode .section {
-             background: var(--light-bg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed; /* Parallax effect for sections */
+            color: var(--text-primary); /* Ensure text color is appropriate for dark mode */
         }
 
+        /* Overlay for section backgrounds to ensure text readability */
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            z-index: 0;
+        }
+
+        .section > .section-container {
+            position: relative; /* Ensure content is above the overlay */
+            z-index: 1;
+        }
+
+        /* Specific Section Background Images */
+        #about {
+            background-image: url('https://placehold.co/1920x1080/1a1a2e/4ecdc4?text=About+Background');
+        }
+        #experience {
+            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+        }
+        #skills {
+            background-image: url('https://placehold.co/1920x1080/34495e/9b59b6?text=Skills+Background');
+        }
+        #certifications {
+            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+        }
+        #courses {
+            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+        }
+        #projects {
+            background-image: url('https://placehold.co/1920x1080/9b59b6/3498db?text=Projects+Background');
+        }
+        #testimonials {
+            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+        }
+        #pricing {
+            background-image: url('https://unique-pen.github.io/images/background.jpeg');
+        }
+        #contact {
+            background-image: url('https://placehold.co/1920x1080/7f8c8d/bdc3c7?text=Contact+Background');
+        }
 
         .section-container {
             max-width: 1400px;
@@ -638,10 +421,6 @@
         }
 
         /* About Section */
-        .about {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-        }
-
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -778,10 +557,6 @@
         }
 
         /* Projects Section */
-        .projects {
-            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f0f1e 100%);
-        }
-
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -908,10 +683,6 @@
         }
 
         /* Testimonials Section */
-        .testimonials {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-        }
-
         .testimonials-slider {
             position: relative;
             overflow: hidden; /* Hide overflow for continuous scroll */
@@ -922,7 +693,7 @@
         .testimonials-track {
             display: flex;
             width: fit-content; /* Allow content to dictate width */
-            animation: scrollTestimonials 30s linear infinite; /* Continuous scroll animation */
+            animation: scrollTestimonials 90s linear infinite; /* Increased duration for slower scroll */
         }
 
         .testimonial-card {
@@ -985,6 +756,7 @@
             margin-bottom: 2rem;
             color: var(--text-secondary);
             line-height: 1.8;
+            white-space: normal; /* Ensure text wraps */
         }
 
         .testimonial-author {
@@ -1006,7 +778,7 @@
             font-weight: bold;
             overflow: hidden; /* Ensure image fits within avatar */
         }
-
+        
         .author-avatar img {
             width: 100%;
             height: 100%;
@@ -1088,9 +860,6 @@
             margin-bottom: 1.5rem;
             color: var(--text-primary);
         }
-        body.light-mode .pricing-card .price-placeholder {
-            color: var(--light-text-primary);
-        }
 
         .pricing-card ul {
             list-style: none;
@@ -1127,10 +896,6 @@
 
 
         /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-        }
-
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1255,7 +1020,7 @@
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-
+            
             .stats-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
@@ -1268,12 +1033,12 @@
             .section {
                 padding: 5rem 5%;
             }
-
+            
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
             }
-
+            
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -1287,10 +1052,6 @@
                 padding: 1rem 0;
                 align-items: center;
             }
-            body.light-mode .nav-links {
-                 background: rgba(255, 255, 255, 0.95);
-                 border-top: 1px solid var(--light-glass-border);
-            }
 
             .nav-links.active {
                 display: flex;
@@ -1299,11 +1060,11 @@
             .hamburger {
                 display: flex;
             }
-
+            
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
+            
             .skills-grid,
             .projects-grid,
             .experience-grid,
@@ -1485,7 +1246,7 @@
         .hero-media img:hover, .hero-media video:hover {
             transform: scale(1.03);
         }
-
+        
         /* About Image */
         .about-image {
             text-align: center;
@@ -1593,7 +1354,7 @@
     </div>
 
     <div class="cursor"></div>
-
+    
     <div class="progress-bar"></div>
 
     <nav class="nav" id="navbar">
@@ -1611,14 +1372,6 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="theme-switch-wrapper">
-                <i class="fas fa-sun"></i>
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-                <i class="fas fa-moon"></i>
-            </div>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -1628,17 +1381,17 @@
     </nav>
 
     <section class="hero" id="home">
-        <!-- Floating shapes removed as background image is now used -->
-        <!-- <div class="floating-shapes">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-        </div> -->
+        <!-- Video background element -->
+        <video autoplay loop muted class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-artificial-intelligence-human-head-4977-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
         <div class="hero-content">
             <h3 class="hero-title">Olukunle Oluwatosin</h3>
                <div class="hero-subtitle">AI Enthusiast | Lead Tutor | Teachers Trainer | Edtechpreneur</div>
             <p class="hero-description">
-                <span>Empowering the next generation through AI, education, and purpose-driven mentorship.</span>
+                Empowering the next generation through AI, education, and purpose-driven mentorship.
             </p>
             <div class="hero-cta">
                 <a href="#experience" class="cta-button">
@@ -1650,20 +1403,6 @@
                     Let's Connect
                 </a>
             </div>
-
-            <!-- Removed hero media section as requested -->
-            <!--
-            <div class="hero-media fade-in">
-                <img src="https://via.placeholder.com/400x250?text=AI+Concept+Image+1" alt="Abstract AI technology concept" title="AI Technology">
-                <video controls autoplay loop muted src="https://assets.mixkit.co/videos/preview/mixkit-artificial-intelligence-human-head-4977-large.mp4" type="video/mp4" title="AI Short Video">
-                    Your browser does not support the video tag.
-                </video>
-                <img src="https://via.placeholder.com/400x250?text=AI+Concept+Image+2" alt="Neural network visualization" title="AI Neural Network">
-            </div>
-            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 1rem;">
-                <em>(Placeholder images and video. Please replace `src` attributes with your actual media files.)</em>
-            </p>
-            -->
         </div>
     </section>
 
@@ -1689,9 +1428,9 @@
                     </p>
                 </div>
                 <div class="about-image fade-in">
-                    <img src="https://unique-pen.github.io/images/portrait.jpeg" alt="Teachers interacting with students in a classroom setting" title="Educating the Future">
+                    <img src="https://via.placeholder.com/600x400?text=Teachers+Teaching+Students" alt="Teachers interacting with students in a classroom setting" title="Educating the Future">
                     <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem;">
-                        
+                        <em>(Placeholder image. Please replace `src` attribute with your actual media files.)</em>
                     </p>
                 </div>
                 <div class="stats-grid fade-in">
@@ -2348,26 +2087,7 @@
             navLinksContainer.classList.toggle('active');
         });
 
-        // Dark/Light Mode Toggle
-        const themeToggle = document.getElementById('checkbox');
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme) {
-            document.body.classList.add(currentTheme);
-            if (currentTheme === 'light-mode') {
-                themeToggle.checked = true;
-            }
-        }
-
-        themeToggle.addEventListener('change', () => {
-            if (themeToggle.checked) {
-                document.body.classList.add('light-mode');
-                localStorage.setItem('theme', 'light-mode');
-            } else {
-                document.body.classList.remove('light-mode');
-                localStorage.setItem('theme', 'dark-mode');
-            }
-        });
+        // Removed Dark/Light Mode Toggle JavaScript
 
         // Fade In Animation
         const observerOptions = {
@@ -2480,7 +2200,7 @@
                 // For demonstration, we'll simulate success
                 const submitButton = this.querySelector('button[type="submit"]');
                 const originalText = submitButton.innerHTML;
-
+                
                 submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitButton.disabled = true;
 
@@ -2516,26 +2236,12 @@
             });
         }
 
-        // Parallax Effect for Floating Shapes - Removed as floating shapes are hidden
-        // window.addEventListener('scroll', () => {
-        //     const scrolled = window.pageYOffset;
-        //     const shapes = document.querySelectorAll('.floating-shape');
-
-        //     shapes.forEach((shape, index) => {
-        //         const rate = scrolled * -0.05 * (index + 1); // Adjusted rate for subtle effect
-        //         shape.style.transform = `translateY(${rate}px)`;
-        //     });
-        // });
-
         // Keyboard Navigation focus styles for accessibility
         const style = document.createElement('style');
         style.textContent = `
             .keyboard-navigation *:focus {
                 outline: 2px solid var(--accent-color);
                 outline-offset: 2px;
-            }
-            body.light-mode .keyboard-navigation *:focus {
-                outline: 2px solid var(--light-accent-color);
             }
         `;
         document.head.appendChild(style);
