@@ -1023,12 +1023,13 @@
             .testimonial-card {
                 flex: 0 0 90%; /* Adjust for smaller screens */
                 min-width: 90%;
+                padding: 1.5rem; /* Reduced padding for mobile */
             }
             .testimonials-track { /* Apply animation duration here for mobile */
                 animation: scrollTestimonials 60s linear infinite; /* Slower on mobile */
             }
             .testimonial-text {
-                font-size: 0.9rem; /* Further reduced font size for mobile */
+                font-size: 0.85rem; /* Further reduced font size for mobile */
             }
             @keyframes scrollTestimonials {
                 0% { transform: translateX(0); }
@@ -1393,6 +1394,11 @@
                 animation: none; /* Disable marquee animation on mobile */
                 padding-left: 0; /* Remove padding for off-screen start */
                 white-space: normal; /* Ensure text wraps */
+            }
+
+            /* Hide theme toggle on mobile */
+            .theme-switch-wrapper {
+                display: none; 
             }
         }
 
@@ -2402,23 +2408,34 @@
         // Dark/Light Mode Toggle
         const themeToggle = document.getElementById('checkbox');
         const currentTheme = localStorage.getItem('theme');
+        const isMobile = window.innerWidth <= 768; // Define your mobile breakpoint
 
-        if (currentTheme) {
-            document.body.classList.add(currentTheme);
-            if (currentTheme === 'light-mode') {
-                themeToggle.checked = true;
+        if (isMobile) {
+            // Force dark mode on mobile
+            document.body.classList.remove('light-mode');
+            localStorage.setItem('theme', 'dark-mode');
+            themeToggle.checked = false; // Ensure toggle is off
+            themeToggle.disabled = true; // Disable the toggle
+        } else {
+            // Apply stored theme for desktop
+            if (currentTheme) {
+                document.body.classList.add(currentTheme);
+                if (currentTheme === 'light-mode') {
+                    themeToggle.checked = true;
+                }
             }
+
+            // Add event listener only for desktop
+            themeToggle.addEventListener('change', () => {
+                if (themeToggle.checked) {
+                    document.body.classList.add('light-mode');
+                    localStorage.setItem('theme', 'light-mode');
+                } else {
+                    document.body.classList.remove('light-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                }
+            });
         }
-
-        themeToggle.addEventListener('change', () => {
-            if (themeToggle.checked) {
-                document.body.classList.add('light-mode');
-                localStorage.setItem('theme', 'light-mode');
-            } else {
-                document.body.classList.remove('light-mode');
-                localStorage.setItem('theme', 'dark-mode');
-            }
-        });
 
         // Fade In Animation
         const observerOptions = {
