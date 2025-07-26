@@ -704,7 +704,7 @@
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr; /* Default for desktop: text then image */
             gap: 5rem;
             align-items: center;
             margin-top: 5rem;
@@ -1305,7 +1305,16 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .about-content,
+            .about-content {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+            }
+            .about-text {
+                order: 2; /* Place text after image on mobile */
+            }
+            .about-image {
+                order: 1; /* Place image before text on mobile */
+            }
+            
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -1734,12 +1743,6 @@
                 </p>
             </div>
             <div class="about-content">
-                <div class="about-image fade-in">
-                    <img src="https://unique-pen.github.io/images/portrait.jpeg" alt="Teachers interacting with students in a classroom setting" title="Educating the Future">
-                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem;">
-                        <em>Olukunle Oluwatosin</em>
-                    </p>
-                </div>
                 <div class="about-text fade-in">
                     <p>
                         As the Head of Training at GMIND AI and Founder of The Ark Academy, I am deeply committed to leveraging Artificial Intelligence to revolutionize education and empower young minds. My journey involves both innovative program management in AI and hands-on mentorship, guiding teens and young people to discover their purpose and achieve their potential.
@@ -1751,7 +1754,12 @@
                         My work extends to professional development as a Teachers Trainer and Online Teaching Transition Coach. I hold multiple certifications, including 'The Digital Teacher' from UNESCO MGIEP and 'Become an AI-Powered People Manager' from LinkedIn, reinforcing my commitment to continuous growth and cutting-edge educational practices.
                     </p>
                 </div>
-                
+                <div class="about-image fade-in">
+                    <img src="https://unique-pen.github.io/images/portrait.jpeg" alt="Teachers interacting with students in a classroom setting" title="Educating the Future">
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem;">
+                        <em>Olukunle Oluwatosin</em>
+                    </p>
+                </div>
                 <div class="stats-grid fade-in">
                     <div class="stat-card">
                         <span class="stat-number" data-target="2000">0</span>
