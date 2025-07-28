@@ -29,185 +29,19 @@
             --accent-color: #4ecdc4;
             --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-            /* Light Mode Colors - Adjusted for better fit */
-            --light-bg: #f8f9fa; /* Very light grey */
-            --light-text-primary: #212529; /* Dark grey for primary text */
-            --light-text-secondary: #495057; /* Medium grey for secondary text */
-            --light-glass-bg: rgba(255, 255, 255, 0.7); /* More opaque white glass */
-            --light-glass-border: rgba(0, 0, 0, 0.08); /* Subtle border */
-            --light-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08); /* Lighter shadow */
-            --light-accent-color: #007bff; /* A vibrant blue for accent */
-            --light-primary-gradient: linear-gradient(135deg, #e0f2f7 0%, #cce7f2 100%); /* Light blue gradient */
-            --light-accent-gradient: linear-gradient(45deg, #007bff, #00c6ff); /* Blue to light blue gradient */
+            /* Light Mode Colors (kept for potential future use, but not actively used without toggle) */
+            --light-bg: #f8f9fa;
+            --light-text-primary: #212529;
+            --light-text-secondary: #495057;
+            --light-glass-bg: rgba(255, 255, 255, 0.7);
+            --light-glass-border: rgba(0, 0, 0, 0.08);
+            --light-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --light-accent-color: #007bff;
+            --light-primary-gradient: linear-gradient(135deg, #e0f2f7 0%, #cce7f2 100%);
+            --light-accent-gradient: linear-gradient(45deg, #007bff, #00c6ff);
         }
 
-        /* Light Mode Styles */
-        body.light-mode {
-            background: var(--light-bg);
-            color: var(--light-text-primary);
-        }
-        body.light-mode .nav {
-            background: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
-            border-bottom-color: var(--light-glass-border);
-        }
-        body.light-mode .nav-links a {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .nav-links a:hover {
-            color: var(--light-accent-color); /* Use light accent color */
-        }
-        body.light-mode .hero {
-            /* Background image for light mode hero */
-            background: url('https://placehold.co/1920x1080/e0f2f7/007bff?text=Your+Home+Background+Image') no-repeat center center / cover;
-            position: relative;
-        }
-        body.light-mode .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.6); /* Semi-transparent white overlay */
-            z-index: 1;
-        }
-        body.light-mode .hero-content {
-            z-index: 2; /* Ensure content is above overlay */
-        }
-        body.light-mode .hero-subtitle,
-        body.light-mode .hero-title,
-        body.light-mode .hero-description {
-            color: var(--light-text-primary); /* Ensure text is readable over light background */
-            -webkit-text-fill-color: var(--light-text-primary); /* Override transparent text for title */
-            background: none; /* Remove gradient for title */
-        }
-        body.light-mode .hero-title {
-            background: var(--light-accent-gradient); /* Re-apply gradient with light accent */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        body.light-mode .section {
-            background: var(--light-bg);
-        }
-        body.light-mode .about {
-            background: linear-gradient(135deg, #f0f4f7 0%, #f8f9fa 100%); /* Lighter gradient */
-        }
-        body.light-mode .about-text p {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .section-description {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .stat-card,
-        body.light-mode .skill-card,
-        body.light-mode .project-card,
-        body.light-mode .experience-card,
-        body.light-mode .certification-card,
-        body.light-mode .course-card,
-        body.light-mode .testimonial-card,
-        body.light-mode .contact-item,
-        body.light-mode .contact-form,
-        body.light-mode .pricing-card { /* Added pricing card */
-            background: var(--light-glass-bg);
-            border-color: var(--light-glass-border);
-            box-shadow: var(--light-shadow-lg);
-        }
-        /* Apply hover effect to all relevant cards in light mode */
-        body.light-mode .skill-card:hover,
-        body.light-mode .project-card:hover,
-        body.light-mode .experience-card:hover,
-        body.light-mode .certification-card:hover,
-        body.light-card .course-card:hover,
-        body.light-mode .stat-card:hover,
-        body.light-mode .pricing-card:hover { /* Added pricing card */
-            box-shadow: var(--light-shadow-lg);
-            border-color: var(--light-accent-color); /* Use light accent color */
-        }
-        /* Swipe effect for light mode */
-        body.light-mode .skill-card::before,
-        body.light-mode .project-card::before,
-        body.light-mode .experience-card::before,
-        body.light-mode .certification-card::before,
-        body.light-mode .course-card::before,
-        body.light-mode .pricing-card::before,
-        body.light-mode .stat-card::before { /* Added stat card */
-            background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.1), transparent); /* Light accent color for swipe */
-        }
-
-        body.light-mode .skill-card p,
-        body.light-mode .project-content p,
-        body.light-mode .testimonial-text,
-        body.light-mode .author-info p,
-        body.light-mode .experience-card p,
-        body.light-mode .certification-card p,
-        body.light-mode .course-card p {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .experience-card .duration,
-        body.light-mode .certification-card .issued-date {
-            color: rgba(0, 0, 0, 0.6);
-        }
-        body.light-mode .form-group label {
-            color: var(--light-text-secondary);
-        }
-        body.light-mode .form-group input,
-        body.light-mode .form-group textarea {
-            background: rgba(0, 0, 0, 0.05);
-            border-color: var(--light-glass-border);
-            color: var(--light-text-primary);
-        }
-        body.light-mode .form-group input::placeholder,
-        body.light-mode .form-group textarea::placeholder {
-            color: rgba(0, 0, 0, 0.4);
-        }
-        body.light-mode .testimonials {
-            background: linear-gradient(135deg, #e0e5ea 0%, #f0f2f5 100%); /* Lighter gradient */
-        }
-        body.light-mode .contact {
-            background: linear-gradient(135deg, #f0f4f7 0%, #f8f9fa 100%); /* Lighter gradient */
-        }
-        body.light-mode .stat-number,
-        body.light-mode .skill-icon,
-        body.light-mode .project-content h3,
-        body.light-mode .pricing-card h3,
-        body.light-mode .pricing-card ul li i,
-        body.light-mode .contact-item i,
-        body.light-mode .course-icon {
-            color: var(--light-accent-color); /* Use light accent color */
-            background: none; /* Remove gradient if present */
-            -webkit-text-fill-color: var(--light-accent-color); /* Ensure color for text clips */
-        }
-        body.light-mode .skill-icon,
-        body.light-mode .course-icon {
-            background: var(--light-accent-gradient); /* Re-apply gradient with light accent */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        body.light-mode .cta-button {
-            background: var(--light-accent-gradient); /* Use light accent gradient */
-        }
-        body.light-mode .cta-secondary {
-            border-color: var(--light-accent-color);
-            color: var(--light-accent-color);
-        }
-        body.light-mode .cta-secondary:hover {
-            background: var(--light-accent-color);
-            color: white;
-        }
-        body.light-mode .project-link {
-            border-color: var(--light-accent-color);
-            color: var(--light-accent-color);
-        }
-        body.light-mode .project-link:hover {
-            background: var(--light-accent-color);
-            color: white;
-        }
-        body.light-mode #backToTopBtn {
-            background-color: var(--light-accent-color);
-        }
-
+        /* Removed all body.light-mode specific styles as the toggle is removed */
 
         * {
             margin: 0;
@@ -221,7 +55,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--dark-gradient);
+            background: var(--dark-gradient); /* Default to dark mode */
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
@@ -277,9 +111,7 @@
             padding: 15px 5%;
         }
 
-        body.light-mode .nav.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-        }
+        /* Removed body.light-mode .nav.scrolled */
 
         .nav-container {
             display: flex;
@@ -336,7 +168,7 @@
 
         /* Hamburger Menu */
         .hamburger {
-            display: none;
+            display: none; /* Hidden by default, shown on smaller screens */
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
@@ -348,9 +180,7 @@
             background-color: var(--text-primary);
             transition: all 0.3s ease;
         }
-        body.light-mode .hamburger .bar {
-            background-color: var(--light-text-primary);
-        }
+        /* Removed body.light-mode .hamburger .bar */
 
         .hamburger.active .bar:nth-child(2) {
             opacity: 0;
@@ -364,66 +194,8 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* Dark/Light Mode Toggle */
-        .theme-switch-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .theme-switch {
-            display: inline-block;
-            height: 28px;
-            position: relative;
-            width: 50px;
-        }
-
-        .theme-switch input {
-            display: none;
-        }
-
-        .slider {
-            background-color: #ccc;
-            bottom: 0;
-            cursor: pointer;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            border-radius: 34px;
-            transition: .4s;
-        }
-
-        .slider:before {
-            background-color: #fff;
-            bottom: 4px;
-            content: "";
-            height: 20px;
-            left: 4px;
-            position: absolute;
-            border-radius: 50%;
-            transition: .4s;
-            width: 20px;
-        }
-
-        input:checked + .slider {
-            background-color: var(--accent-color);
-        }
-        body.light-mode input:checked + .slider {
-            background-color: var(--light-accent-color); /* Light mode accent */
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(22px);
-        }
-        .theme-switch i {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-        body.light-mode .theme-switch i {
-            color: var(--light-text-secondary);
-        }
+        /* Removed Dark/Light Mode Toggle CSS */
+        /* .theme-switch-wrapper, .theme-switch, .slider, .slider:before, .theme-switch i */
 
 
         /* Hero Section */
@@ -449,9 +221,7 @@
             background: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
             z-index: 1;
         }
-        body.light-mode .hero::before {
-            background: rgba(255, 255, 255, 0.6); /* Light overlay for text readability */
-        }
+        /* Removed body.light-mode .hero::before */
 
         .hero-content {
             position: relative;
@@ -512,10 +282,7 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
-        body.light-mode .hero-description {
-            background: rgba(0, 0, 0, 0.08);
-            border-left-color: var(--light-accent-color);
-        }
+        /* Removed body.light-mode .hero-description */
 
         .hero-cta {
             display: flex;
@@ -600,9 +367,7 @@
             /* Removed background-attachment: fixed; for better mobile compatibility */
             color: var(--text-primary); /* Ensure text color is appropriate for dark mode */
         }
-        body.light-mode .section {
-             background: var(--light-bg);
-        }
+        /* Removed body.light-mode .section */
 
         /* Overlay for section backgrounds to ensure text readability */
         .section::before {
@@ -615,9 +380,7 @@
             background: rgba(0, 0, 0, 0.7); /* Dark overlay */
             z-index: 0;
         }
-        body.light-mode .section::before {
-            background: rgba(255, 255, 255, 0.6); /* Light overlay for text readability */
-        }
+        /* Removed body.light-mode .section::before */
 
 
         .section > .section-container {
@@ -646,16 +409,12 @@
             /* BACKGROUND IMAGE INSERTION POINT FOR CERTIFICATIONS SECTION */
             background-image: url('https://unique-pen.github.io/images/background.jpeg');
         }
-        #courses {
+        #services { /* Renamed from #courses */
             background-image: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/refs/heads/main/images/ai4.jpg');
         }
         
-        #projects {
-            /* BACKGROUND IMAGE INSERTION POINT FOR EXPERIENCE SECTION */
-            background-image: url('https://unique-pen.github.io/images/picture3.jpeg');
-
-        }    
-            #testimonials {
+        /* #portfolio section removed */
+            #testimonials-section { /* Renamed from #testimonials */
             /* BACKGROUND IMAGE INSERTION POINT FOR TESTIMONIALS SECTION */
             background-image: url('https://unique-pen.github.io/images/background.jpeg');
         }
@@ -838,7 +597,7 @@
         }
 
         /* Projects Section */
-        .projects-grid {
+        .portfolio-grid { /* Renamed from .projects-grid */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 3rem;
@@ -1147,9 +906,7 @@
             margin-bottom: 1.5rem;
             color: var(--text-primary);
         }
-        body.light-mode .pricing-card .price-placeholder {
-            color: var(--light-text-primary);
-        }
+        /* Removed body.light-mode .pricing-card .price-placeholder */
 
         .pricing-card ul {
             list-style: none;
@@ -1329,6 +1086,18 @@
             }
         }
 
+        @media (min-width: 769px) { /* Desktop styles for nav links */
+            .nav-links-main {
+                display: flex !important; /* Ensure these are always visible on desktop */
+            }
+            .nav-links-hidden {
+                display: none !important; /* Ensure these are always hidden on desktop */
+            }
+            .hamburger {
+                display: none !important; /* Hide hamburger on desktop */
+            }
+        }
+
         @media (max-width: 768px) {
             .section {
                 padding: 5rem 5%;
@@ -1340,7 +1109,7 @@
             }
             
             .nav-links {
-                display: none;
+                display: none; /* Hidden by default */
                 flex-direction: column;
                 position: absolute;
                 top: 75px; /* Adjust based on nav height */
@@ -1354,17 +1123,14 @@
                 max-height: calc(100vh - 75px); /* Ensure menu is scrollable */
                 overflow-y: auto; /* Enable vertical scrolling */
             }
-            body.light-mode .nav-links {
-                 background: rgba(255, 255, 255, 0.95);
-                 border-top: 1px solid var(--light-glass-border);
-            }
+            /* Removed body.light-mode .nav-links */
 
             .nav-links.active {
-                display: flex;
+                display: flex; /* Show when active */
             }
 
             .hamburger {
-                display: flex;
+                display: flex; /* Show hamburger on mobile */
             }
             
             .stats-grid {
@@ -1372,10 +1138,10 @@
             }
             
             .skills-grid,
-            .projects-grid,
+            .portfolio-grid, /* Renamed */
             .experience-grid,
             .certifications-grid,
-            .courses-grid,
+            .services-grid, /* Renamed */
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
@@ -1405,10 +1171,7 @@
                 white-space: normal; /* Ensure text wraps */
             }
 
-            /* Hide theme toggle on mobile */
-            .theme-switch-wrapper {
-                display: none; 
-            }
+            /* Removed theme-switch-wrapper display none */
         }
 
         @media (max-width: 480px) {
@@ -1431,7 +1194,7 @@
                 width: 100%;
                 font-size: 1rem;
             }
-            .skill-card, .project-card, .experience-card, .certification-card, .course-card, .pricing-card {
+            .skill-card, .project-card, .experience-card, .certification-card, .service-card, .pricing-card, .content-card { /* Added content-card */
                 padding: 2rem;
             }
             .stats-grid {
@@ -1582,15 +1345,15 @@
             border: 1px solid var(--glass-border);
         }
 
-        /* Courses Section */
-        .courses-grid {
+        /* Services Section (formerly Courses) */
+        .services-grid { /* Renamed from .courses-grid */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .course-card {
+        .service-card { /* Renamed from .course-card */
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
@@ -1602,8 +1365,8 @@
             transition: all 0.4s ease; /* Increased transition duration */
         }
 
-        /* Hover effect for course-card */
-        .course-card::before {
+        /* Hover effect for service-card */
+        .service-card::before { /* Renamed */
             content: '';
             position: absolute;
             top: 0;
@@ -1614,17 +1377,17 @@
             transition: left 0.5s;
         }
 
-        .course-card:hover::before {
+        .service-card:hover::before { /* Renamed */
             left: 100%;
         }
 
-        .course-card:hover {
+        .service-card:hover { /* Renamed */
             transform: translateY(-10px); /* Same as skill-card */
             box-shadow: var(--shadow-lg);
             border-color: var(--accent-color);
         }
 
-        .course-icon {
+        .service-icon { /* Renamed from .course-icon */
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             background: var(--accent-gradient);
@@ -1633,17 +1396,94 @@
             background-clip: text;
         }
 
-        .course-card h3 {
+        .service-card h3 { /* Renamed */
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
 
-        .course-card p {
+        .service-card p { /* Renamed */
             color: var(--text-secondary);
             line-height: 1.6;
             font-size: 0.95rem;
+        }
+
+        /* Publications, Speaking & Events, Blog/Insights, Resources (New Sections) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .content-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .content-card:hover::before {
+            left: 100%;
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+
+        .content-card h3 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .content-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .content-card .date {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .content-card .link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            border-radius: 25px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .content-card .link:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* Back to Top Button */
@@ -1682,27 +1522,27 @@
 
     <nav class="nav" id="navbar">
         <div class="nav-container">
-            <div class="logo">Olukunle's Portfolio</div>
+            <div class="logo">Olukunle'Portfolio</div>
             <ul class="nav-links" id="navLinks">
+                <!-- Main visible navigation links -->
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+
+                <!-- Hidden navigation links (for hamburger menu) -->
+                <li class="nav-links-hidden"><a href="#the-ark-academy">The Ark Academy</a></li>
+                <li class="nav-links-hidden"><a href="#skills">Skills</a></li>
+                <li class="nav-links-hidden"><a href="#certifications">Certifications</a></li>
+                <li class="nav-links-hidden"><a href="#publications">Publications</a></li>
+                <li class="nav-links-hidden"><a href="#speaking-events">Speaking & Events</a></li>
+                <li class="nav-links-hidden"><a href="#testimonials-section">Testimonials</a></li>
+                <li class="nav-links-hidden"><a href="#pricing">Pricing</a></li>
+                <li class="nav-links-hidden"><a href="#blog-insights">Blog/Insights</a></li>
+                <li class="nav-links-hidden"><a href="#resources">Resources</a></li>
             </ul>
-            <div class="theme-switch-wrapper">
-                <i class="fas fa-sun"></i>
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-                <i class="fas fa-moon"></i>
-            </div>
+            <!-- Removed theme-switch-wrapper -->
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -1712,8 +1552,6 @@
     </nav>
 
     <section class="hero" id="home">
-        <!-- The video background element is removed as per request.
-             The background image for the hero section is now set directly in CSS. -->
         <div class="hero-content">
             <h3 class="hero-title">Olukunle Oluwatosin</h3>
                <div class="hero-subtitle">AI Enthusiast | Lead Tutor | Teachers Trainer | Edtechpreneur</div>
@@ -1777,6 +1615,50 @@
                         <span class="stat-number" data-target="5">0</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="the-ark-academy">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">My Institution</div>
+                <h2 class="section-title">The Ark Academy</h2>
+                <p class="section-description">
+                    Nurturing young minds to discover purpose and achieve potential.
+                </p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card fade-in">
+                    <h3>Mission & Vision</h3>
+                    <p>Our mission is to empower teens and young people through purpose-driven mentorship and innovative educational programs, fostering leadership and self-discovery.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Purpose-driven mentorship</li>
+                        <li><i class="fas fa-check-circle"></i> Innovative educational programs</li>
+                        <li><i class="fas fa-check-circle"></i> Fostering leadership</li>
+                        <li><i class="fas fa-check-circle"></i> Promoting self-discovery</li>
+                    </ul>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Programs Offered</h3>
+                    <p>We offer a range of online and in-person programs designed to equip young individuals with essential life skills and academic excellence.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Online Mentoring Program</li>
+                        <li><i class="fas fa-check-circle"></i> AI Literacy Workshops</li>
+                        <li><i class="fas fa-check-circle"></i> Leadership Development Courses</li>
+                        <li><i class="fas fa-check-circle"></i> Academic Support & Tutoring</li>
+                    </ul>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Success Stories</h3>
+                    <p>Hear from our alumni who have gone on to achieve great things after participating in The Ark Academy programs.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 2000+ teens engaged</li>
+                        <li><i class="fas fa-check-circle"></i> 30+ certified young leaders</li>
+                        <li><i class="fas fa-check-circle"></i> Enhanced academic performance</li>
+                        <li><i class="fas fa-check-circle"></i> Increased confidence and clarity</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1962,152 +1844,134 @@
         </div>
     </section>
 
-    <section class="section" id="courses">
+    <section class="section" id="services">
         <div class="section-container">
             <div class="section-header fade-in">
                 <div class="section-subtitle">My Offerings</div>
-                <h2 class="section-title">Courses & Services Offered</h2>
+                <h2 class="section-title">Services & Expertise</h2>
                 <p class="section-description">
                     Empowering individuals and educators with practical knowledge and skills.
                 </p>
             </div>
-            <div class="courses-grid">
-                <div class="course-card fade-in">
-                    <div class="course-icon"><i class="fas fa-robot"></i></div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
                     <h3>Artificial Intelligence Training</h3>
                     <p>Comprehensive training on AI concepts, applications, and their integration into various fields.</p>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-icon"><i class="fas fa-users-class"></i></div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-users-class"></i></div>
                     <h3>Youth Mentorship Programs</h3>
                     <p>Guiding teens and young people to discover purpose, develop leadership skills, and achieve personal growth.</p>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                     <h3>Teachers Training & Development</h3>
                     <p>Workshops and coaching for educators on modern pedagogy, classroom management, and effective teaching strategies.</p>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Online Teaching Transition Coaching</h3>
                     <p>Assisting teachers in seamlessly transitioning to and excelling in online educational environments.</p>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-icon"><i class="fas fa-project-diagram"></i></div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
                     <h3>Project Management Workshops</h3>
                     <p>Training on fundamental project management principles, methodologies, and tools for successful project delivery.</p>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-icon"><i class="fas fa-globe"></i></div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
                     <h3>English Language Teaching (TEFL)</h3>
                     <p>Specialized instruction in teaching English as a Foreign Language, including practical classroom techniques.</p>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-icon"><i class="fas fa-calculator"></i></div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-calculator"></i></div>
                     <h3>Mathematics Tutoring</h3>
                     <p>Personalized tutoring sessions to help students build strong foundational skills and excel in Mathematics.</p>
                 </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Corporate Training Services</h3>
+                    <p>Tailored training solutions for organizations seeking to upskill their workforce in AI, project management, and digital literacy.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section projects" id="projects">
+    <!-- Portfolio/Case Studies section removed as per request -->
+
+    <section class="section" id="publications">
         <div class="section-container">
             <div class="section-header fade-in">
-                <div class="section-subtitle">My Work</div>
-                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-subtitle">My Contributions</div>
+                <h2 class="section-title">Publications & Content</h2>
                 <p class="section-description">
-                    Showcasing my skills through practical applications and real-world solutions.
+                    Sharing insights and knowledge through various written works and resources.
                 </p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400?text=AI+Learning+Platform" alt="Screenshot of an AI Learning Platform">
-                    </div>
-                    <div class="project-content">
-                        <h3>AI-Powered Learning Platform</h3>
-                        <p>Developed an interactive platform to deliver personalized AI training to students. It features adaptive quizzes and real-time progress tracking.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Python (Backend)</span>
-                            <span class="tech-tag">Machine Learning</span>
-                        </div>
-                        <p><b>Challenges:</b> Integrating complex AI models for content personalization and ensuring a scalable, user-friendly interface across devices.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/OlukunleSamson/AI-Learning-Platform-Demo" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                GitHub Repo
-                            </a>
-                            <a href="https://your-ailp-demo.netlify.app" target="_blank" class="project-link"> <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
-                        </div>
-                    </div>
+            <div class="content-grid">
+                <div class="content-card fade-in">
+                    <h3>Book: The Future of AI in Education</h3>
+                    <p>An in-depth exploration of how Artificial Intelligence is reshaping learning environments and pedagogical approaches.</p>
+                    <p class="date">Published: 2024</p>
+                    <a href="#" class="link">Read More <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400?text=Edtech+Mentorship+Site" alt="Screenshot of Edtech Mentorship Website">
-                    </div>
-                    <div class="project-content">
-                        <h3>Youth Mentorship & Edtech Portal</h3>
-                        <p>Designed and built a responsive website for The Ark Academy, facilitating online mentorship programs and resource sharing for young learners.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">Responsive Design</span>
-                            <span class="tech-tag">jQuery</span>
-                            <span class="tech-tag">Content Management</span>
-                        </div>
-                        <p><b>Challenges:</b> Creating an intuitive navigation for diverse age groups and ensuring robust content delivery for online courses.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/OlukunleSamson/ArkAcademy-Website" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                GitHub Repo
-                            </a>
-                            <a href="https://your-arkacademy-demo.netlify.app" target="_blank" class="project-link"> <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
-                        </div>
-                    </div>
+                <div class="content-card fade-in">
+                    <h3>Blog Post: 5 Tips for Engaging Online Learners</h3>
+                    <p>Practical strategies for educators to create dynamic and interactive virtual classrooms.</p>
+                    <p class="date">Date: May 15, 2025</p>
+                    <a href="#" class="link">Read Article <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400?text=Teacher+Training+Hub" alt="Screenshot of Teacher Training Hub Website">
-                    </div>
-                    <div class="project-content">
-                        <h3>Online Teacher Training Hub</h3>
-                        <p>A web platform developed to support teachers with resources and training modules for transitioning to effective online instruction.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">Bootstrap</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">LMS Integration</span>
-                        </div>
-                        <p><b>Challenges:</b> Designing a user-friendly interface for educators with varying tech proficiency and providing a seamless learning experience.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/OlukunleSamson/Teacher-Training-Hub" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                GitHub Repo
-                            </a>
-                            <a href="https://your-teachertraining-demo.netlify.app" target="_blank" class="project-link"> <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
-                        </div>
-                    </div>
+                <div class="content-card fade-in">
+                    <h3>Research Paper: AI-Driven Personalized Learning</h3>
+                    <p>A study on the effectiveness of AI algorithms in tailoring educational content to individual student needs.</p>
+                    <p class="date">Published: Q2 2025</p>
+                    <a href="#" class="link">Download Paper <i class="fas fa-download"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section testimonials" id="testimonials">
+    <section class="section" id="speaking-events">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">Engagements</div>
+                <h2 class="section-title">Speaking & Events</h2>
+                <p class="section-description">
+                    Connecting with audiences on the future of education and technology.
+                </p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card fade-in">
+                    <h3>Upcoming: Global EdTech Summit</h3>
+                    <p>Topic: "AI Ethics in Youth Education"</p>
+                    <p class="date">Date: Aug 20, 2025</p>
+                    <p>Location: Virtual Conference</p>
+                    <a href="#" class="link">Register <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Past: National Teachers Conference</h3>
+                    <p>Workshop: "Leveraging AI Tools for Classroom Innovation"</p>
+                    <p class="date">Date: Apr 10, 2025</p>
+                    <p>Location: Lagos, Nigeria</p>
+                    <a href="#" class="link">View Highlights <i class="fas fa-video"></i></a>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Webinar: Purpose-Driven Mentorship</h3>
+                    <p>Hosted a webinar on guiding young people to find their life's purpose.</p>
+                    <p class="date">Date: Feb 28, 2025</p>
+                    <p>Platform: Zoom</p>
+                    <a href="#" class="link">Watch Recording <i class="fas fa-play-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials-section">
         <div class="section-container">
             <div class="section-header fade-in">
                 <div class="section-subtitle">What Others Say</div>
-                <h2 class="section-title">Kind Words From My Journey</h2>
+                <h2 class="section-title">Testimonials & Success Stories</h2>
                 <p class="section-description">
                     Hear from students, colleagues, and partners about the impact of my work.
                 </p>
@@ -2250,6 +2114,67 @@
         </div>
     </section>
 
+    <section class="section" id="blog-insights">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">My Thoughts</div>
+                <h2 class="section-title">Blog & Insights</h2>
+                <p class="section-description">
+                    Stay updated with my latest articles, thoughts, and analyses on AI, education, and youth development.
+                </p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card fade-in">
+                    <h3>The Role of AI in Personalized Learning</h3>
+                    <p>Exploring how AI can revolutionize individualized education paths for students.</p>
+                    <p class="date">Date: July 20, 2025</p>
+                    <a href="#" class="link">Read Post <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Empowering Educators for the Digital Age</h3>
+                    <p>Tips and strategies for teachers to embrace technology and enhance their teaching.</p>
+                    <p class="date">Date: June 10, 2025</p>
+                    <a href="#" class="link">Read Post <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Mentorship: Guiding Youth to Purpose</h3>
+                    <p>Understanding the critical role of mentorship in helping young people find their direction.</p>
+                    <p class="date">Date: May 5, 2025</p>
+                    <a href="#" class="link">Read Post <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="resources">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">Tools & Downloads</div>
+                <h2 class="section-title">Free Resources</h2>
+                <p class="section-description">
+                    Access valuable guides, templates, and tools to support your learning and development.
+                </p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card fade-in">
+                    <h3>AI in Education Starter Guide</h3>
+                    <p>A comprehensive guide for educators new to integrating AI into their classrooms.</p>
+                    <a href="#" class="link">Download PDF <i class="fas fa-download"></i></a>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Youth Mentorship Planning Template</h3>
+                    <p>A customizable template to help mentors structure effective mentorship sessions.</p>
+                    <a href="#" class="link">Download Template <i class="fas fa-download"></i></a>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>Online Teaching Checklist</h3>
+                    <p>Ensure you're ready for successful online instruction with this practical checklist.</p>
+                    <a href="#" class="link">Download Checklist <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section contact" id="contact">
         <div class="section-container">
             <div class="section-header fade-in">
@@ -2330,7 +2255,7 @@
 
         // Custom Cursor
         const cursor = document.querySelector('.cursor');
-        const clickableElements = document.querySelectorAll('a, button, .skill-card, .project-card, .stat-card, .experience-card, .certification-card, .course-card, .pricing-card, .testimonial-card, .contact-item'); // Added testimonial and contact items
+        const clickableElements = document.querySelectorAll('a, button, .skill-card, .project-card, .stat-card, .experience-card, .certification-card, .service-card, .pricing-card, .testimonial-card, .contact-item, .content-card'); 
 
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
@@ -2366,8 +2291,7 @@
         function activateNavLink() {
             let currentActive = null;
             sections.forEach(section => {
-                // The scroll-padding-top CSS property now handles the offset
-                const sectionTop = section.offsetTop - (navbar.offsetHeight / 2); // Adjusted offset for more precise activation
+                const sectionTop = section.offsetTop - (navbar.offsetHeight / 2); 
                 const sectionBottom = sectionTop + section.offsetHeight;
                 if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
                     currentActive = section.id;
@@ -2390,8 +2314,6 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    // With scroll-padding-top, direct scroll to target.offsetTop is usually sufficient
-                    // as the browser will account for the padding.
                     window.scrollTo({
                         top: target.offsetTop,
                         behavior: 'smooth'
@@ -2414,19 +2336,18 @@
             navLinksContainer.classList.toggle('active');
         });
 
-        // Dark/Light Mode Toggle
+        // Removed Dark/Light Mode Toggle JavaScript
+        /*
         const themeToggle = document.getElementById('checkbox');
         const currentTheme = localStorage.getItem('theme');
-        const isMobile = window.innerWidth <= 768; // Define your mobile breakpoint
+        const isMobile = window.innerWidth <= 768; 
 
         if (isMobile) {
-            // Force dark mode on mobile
             document.body.classList.remove('light-mode');
             localStorage.setItem('theme', 'dark-mode');
-            themeToggle.checked = false; // Ensure toggle is off
-            themeToggle.disabled = true; // Disable the toggle
+            themeToggle.checked = false; 
+            themeToggle.disabled = true; 
         } else {
-            // Apply stored theme for desktop
             if (currentTheme) {
                 document.body.classList.add(currentTheme);
                 if (currentTheme === 'light-mode') {
@@ -2434,7 +2355,6 @@
                 }
             }
 
-            // Add event listener only for desktop
             themeToggle.addEventListener('change', () => {
                 if (themeToggle.checked) {
                     document.body.classList.add('light-mode');
@@ -2445,6 +2365,7 @@
                 }
             });
         }
+        */
 
         // Fade In Animation
         const observerOptions = {
@@ -2473,20 +2394,19 @@
                     const target = parseInt(counter.getAttribute('data-target'));
                     const increment = target / 100;
                     let current = 0;
-                    let animationStarted = false; // Flag to ensure animation runs once
+                    let animationStarted = false; 
 
                     const updateCounter = () => {
                         if (current < target) {
                             current += increment;
                             counter.textContent = Math.ceil(current);
-                            requestAnimationFrame(updateCounter); // Use requestAnimationFrame for smoother animation
+                            requestAnimationFrame(updateCounter); 
                         } else {
-                            counter.textContent = target + '+'; // Add '+' sign here
+                            counter.textContent = target + '+'; 
                             counterObserver.unobserve(counter);
                         }
                     };
 
-                    // Only start animation if it hasn't started yet
                     if (!animationStarted) {
                         updateCounter();
                         animationStarted = true;
@@ -2499,17 +2419,10 @@
             counterObserver.observe(counter);
         });
 
-        // Testimonials Slider - Modified for continuous CSS animation
-        // The JavaScript for dots and manual slide changes is no longer needed for continuous scroll
-        // but keeping it minimal for now. The CSS animation handles the primary movement.
-        // Removed original createDots, updateDots, moveToSlide, startSlider, stopSlider functions.
-        // The testimonialTrack CSS animation handles the continuous movement.
-        // The sliderDots element is now hidden via CSS.
-
         // Contact Form Validation
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
+            e.preventDefault(); 
 
             let isValid = true;
 
@@ -2558,8 +2471,6 @@
             }
 
             if (isValid) {
-                // If validation passes, you can proceed with actual form submission (e.g., using Formspree)
-                // For demonstration, we'll simulate success
                 const submitButton = this.querySelector('button[type="submit"]');
                 const originalText = submitButton.innerHTML;
                 
@@ -2605,9 +2516,7 @@
                 outline: 2px solid var(--accent-color);
                 outline-offset: 2px;
             }
-            body.light-mode .keyboard-navigation *:focus {
-                outline: 2px solid var(--light-accent-color);
-            }
+            /* Removed body.light-mode .keyboard-navigation *:focus */
         `;
         document.head.appendChild(style);
     </script>
