@@ -2059,71 +2059,58 @@
         </div>
     </section>
     
-    <section class="section contact" id="contact">
-        <div class="section-container">
-            <div class="section-header fade-in">
-                <div class="section-subtitle">Get In Touch</div>
-                <h2 class="section-title">Let's Collaborate</h2>
-                <p class="section-description">
-                    Ready to transform education and empower minds? Let's connect.
-                </p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>thearkacademy420@gmail.com</span>
+    <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="section-container">
+                <header class="section-header">
+                    <p class="section-subtitle">Let's Connect</p>
+                    <h2 class="section-title">Contact Me</h2>
+                    <p class="section-description">I am open to new collaborations and opportunities. Feel free to reach out to me.</p>
+                </header>
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <h3>Send me a message</h3>
+                        <form class="contact-form" id="contactForm">
+                            <div class="input-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="input-group">
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn" id="submitButton">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+234-7030621774</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Lagos, Nigeria</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/olukunle-samson-oluwatosin" target="_blank">linkedin.com/in/olukunle-samson-oluwatosin</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/OlukunleSamson" target="_blank">github.com/OlukunleSamson</a>
+                    <div class="contact-info-grid">
+                        <div class="contact-card">
+                            <a href="mailto:your.email@example.com">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <div class="contact-card">
+                            <a href="tel:+1234567890">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                        <div class="contact-card">
+                            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="contact-card">
+                            <a href="https://github.com/yourprofile" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form fade-in" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
-                        <div class="error-message" id="nameError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                        <div class="error-message" id="emailError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="AI Collaboration" required>
-                        <div class="error-message" id="subjectError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
-                        <div class="error-message" id="messageError"></div>
-                    </div>
-                    <button type="submit" class="cta-button">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 1rem;">
-                        <em>(This form uses client-side validation. For a working backend, consider Formspree or EmailJS integration.)</em>
-                    </p>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
         <i class="fas fa-arrow-up"></i>
@@ -2406,6 +2393,7 @@
     </script>
 </body>
 </html>
+
 
 
 
