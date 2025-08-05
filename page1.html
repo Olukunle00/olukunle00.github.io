@@ -820,6 +820,79 @@
             font-size: var(--text-xl); /* Adjust icon size */
         }
 
+        /* Modal/Lightbox styles */
+        .image-modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: var(--z-modal); /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain; /* Ensure image fits within bounds */
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-2xl);
+            transform: scale(0.8);
+            transition: transform var(--transition-base);
+        }
+
+        .image-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-caption {
+            display: none; /* Hide the caption */
+        }
+
+        .modal-close {
+            position: absolute;
+            top: var(--space-8);
+            right: var(--space-10);
+            color: #fff;
+            font-size: var(--text-4xl);
+            font-weight: bold;
+            transition: var(--transition-fast);
+            cursor: pointer;
+            z-index: var(--z-tooltip);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            width: var(--space-10);
+            height: var(--space-10);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: var(--coral-primary);
+            background: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            cursor: pointer;
+            transform: rotate(90deg);
+        }
+
         /* Advanced Responsive Design */
         @media (max-width: 1200px) {
             .container {
@@ -870,6 +943,14 @@
             .impact-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .modal-close {
+                top: var(--space-4);
+                right: var(--space-4);
+                font-size: var(--text-3xl);
+                width: var(--space-8);
+                height: var(--space-8);
+            }
         }
 
         @media (max-width: 480px) {
@@ -904,7 +985,7 @@
     <main id="main-content" class="main-content">
 
         <!-- Hero Section - Now only background image -->
-        <section class="hero-section" style="background-image: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image1_grd.jpg');">
+        <section class="hero-section" style="background-image: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image5_grd.jpg');">
             <!-- No content inside this section, it's purely visual -->
         </section>
 
@@ -1011,26 +1092,22 @@
                         <h2 class="section-title">Program Agenda</h2>
                         <div class="image-gallery">
                             <div class="gallery-item" tabindex="0">
-                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image5_ai.jpg" alt="Interactive AI Tools Demonstration" loading="lazy" class="gallery-image">
+                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image5_grd.jpg" alt="Interactive AI Tools Demonstration" loading="lazy" class="gallery-image">
                                 <div class="gallery-caption">Interactive AI Tools Demonstration</div>
                             </div>
                             <div class="gallery-item" tabindex="0">
-                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image3_grd.jpg" alt="Collaborative AI Lesson Planning" loading="lazy" class="gallery-image">
+                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image4_grd.jpg" alt="Collaborative AI Lesson Planning" loading="lazy" class="gallery-image">
                                 <div class="gallery-caption">Collaborative AI Lesson Planning</div>
                             </div>
                             <div class="gallery-item" tabindex="0">
-                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image4_grd.jpg" alt="Real-world AI Implementation" loading="lazy" class="gallery-image">
+                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image5_grd.jpg" alt="Real-world AI Implementation" loading="lazy" class="gallery-image">
                                 <div class="gallery-caption">Real-world AI Implementation</div>
                             </div>
                             <div class="gallery-item" tabindex="0">
-                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image3_grd.jpg" alt="Intelligent Assessment Systems" loading="lazy" class="gallery-image">
+                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/image5_grd.jpg" alt="Intelligent Assessment Systems" loading="lazy" class="gallery-image">
                                 <div class="gallery-caption">Intelligent Assessment Systems</div>
                             </div>
-                            <div class="gallery-item" tabindex="0">
-                                <img src="https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/main/images/inage2_grd.jpg" alt="Future of AI in Education" loading="lazy" class="gallery-image">
-                                <div class="gallery-caption">Future of AI in Education</div>
-                            </div>
-                                                   </div>
+                                              </div>
                     </div>
 
                     <!-- Testimonial Section -->
@@ -1049,7 +1126,7 @@
 
         <!-- Call to Action Section -->
         <section class="cta-section fade-in" style="--fade-in-delay: 0.7s;">
-            <a href="index.html#contact" class="cta-button">
+            <a href="#" class="cta-button">
                 Join Future Workshops
                 <i class="fa-solid fa-arrow-right cta-icon"></i>
             </a>
@@ -1058,8 +1135,8 @@
         <!-- Back to Home Button - Moved below CTA -->
         <section class="back-home-section cta-section" style="margin-top: var(--space-8);">
             <div class="container container--narrow fade-in" style="--fade-in-delay: 0.8s;">
-                <a href="index.html#speaking-events" class="back-to-home-button">
-                    <i class="fa-solid fa-arrow-left"></i> View more events
+                <a href="#" class="back-to-home-button">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Home
                 </a>
             </div>
         </section>
@@ -1071,6 +1148,13 @@
             <p class="footer-text">&copy; 2024 Olukunle Samson Oluwatosin. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Image Modal/Lightbox Structure -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption" class="modal-caption"></div> <!-- This will now be hidden by CSS -->
+    </div>
 
     <script defer>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1122,11 +1206,53 @@
                 img.addEventListener('load', () => {
                     img.classList.add('loaded');
                 });
-                img.src = img.src; // Trigger load for images already in view
+                // Trigger load for images already in view if they are not loaded yet
+                if (!img.complete) {
+                    img.src = img.src;
+                }
+            });
+
+            // Image Modal/Lightbox Logic
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const modalClose = document.querySelector('.modal-close');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('.gallery-image');
+
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt;
+                    modalCaption.textContent = ''; // Ensure caption is empty
+                    imageModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                });
+            });
+
+            // Close modal when close button is clicked
+            modalClose.addEventListener('click', () => {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close modal when clicking outside the image
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) {
+                    imageModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                    imageModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
             });
         });
     </script>
 </body>
 </html>
-
-
