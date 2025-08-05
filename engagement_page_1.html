@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Teachers Conference - Olukunle</title>
+    <meta name="description" content="Details on Olukunle's workshop at the National Teachers Conference on leveraging AI for classroom innovation.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reusing the same core styles for consistency */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-gradient: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --accent-color: #4ecdc4;
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-gradient);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex-grow: 1;
+        }
+
+        .event-detail-section {
+            padding: 8rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .event-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .event-header .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .event-header .back-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .event-header .back-btn i {
+            font-size: 1.2rem;
+        }
+
+        .event-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .event-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
+        .event-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .event-content p, .event-content ul {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .event-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .event-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .event-content ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .event-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Styles for the new gallery and video sections */
+        .media-section {
+            margin-top: 3rem;
+        }
+        
+        .media-section h4 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .image-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+        .meta-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .meta-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .meta-card i {
+            font-size: 2rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .meta-card h5 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+        }
+        
+        .meta-card p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .event-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: var(--accent-gradient);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 3rem;
+        }
+        
+        .event-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .event-button i {
+            font-size: 1.2rem;
+        }
+
+        /* Footer - Reusing the same style for consistency */
+        .footer {
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(12, 12, 12, 0.8);
+            backdrop-filter: blur(20px);
+            color: var(--text-secondary);
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .event-content {
+                padding: 2rem;
+            }
+            .meta-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <section class="event-detail-section">
+            <header class="event-header">
+                <a href="offerings-page.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Engagements</a>
+                <h1 class="event-title">National Teachers Conference</h1>
+                <p class="event-subtitle">Workshop: Leveraging AI Tools for Classroom Innovation</p>
+            </header>
+            <div class="event-content">
+                <p>At the National Teachers Conference, Olukunle led an interactive workshop designed to demystify AI for educators. The session provided hands-on experience with practical, free-to-use AI tools that can streamline administrative tasks, personalize student learning, and create dynamic lesson plans. The goal was to empower teachers with the confidence and skills to integrate technology seamlessly into their daily teaching, enhancing both their productivity and student engagement.</p>
+                <h4>Workshop Highlights Included:</h4>
+                <ul>
+                    <li>Live demonstrations of AI-powered lesson plan generators and grading tools.</li>
+                    <li>Case studies on successful AI implementation in various subjects.</li>
+                    <li>Practical exercises on creating interactive quizzes and educational games with AI.</li>
+                    <li>A deep dive into best practices for classroom management in a tech-rich environment.</li>
+                </ul>
+                
+                <!-- New section for images -->
+                <div class="media-section">
+                    <h4>Gallery Highlights</h4>
+                    <div class="image-gallery">
+                        <img src="https://placehold.co/400x300/667eea/ffffff?text=Event+Photo+1" alt="Workshop participants engaged with AI tools.">
+                        <img src="https://placehold.co/400x300/764ba2/ffffff?text=Event+Photo+2" alt="Olukunle speaking on stage.">
+                        <img src="https://placehold.co/400x300/4ecdc4/ffffff?text=Event+Photo+3" alt="Teachers collaborating on a project.">
+                        <img src="https://placehold.co/400x300/ff6b6b/ffffff?text=Event+Photo+4" alt="Close-up of a live demonstration.">
+                    </div>
+                </div>
+
+                <!-- New section for video -->
+                <div class="media-section">
+                    <h4>Watch the Highlights</h4>
+                    <div class="video-container">
+                        <!-- Replace this iframe source with your actual YouTube or video link -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
+                <div class="meta-info-grid">
+                    <div class="meta-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h5>Date</h5>
+                            <p>April 10, 2025</p>
+                        </div>
+                    </div>
+                    <div class="meta-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h5>Location</h5>
+                            <p>Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="event-button" target="_blank">View Workshop Highlights <i class="fas fa-video"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> Olukunle Samson Oluwatosin. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
