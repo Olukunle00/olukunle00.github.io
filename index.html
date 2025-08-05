@@ -943,123 +943,235 @@
 
 
         /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            margin-top: 5rem;
-        }
+	  .contact-content {
+	      display: grid;
+	      grid-template-columns: 1fr 1fr;
+	      gap: 5rem;
+	      margin-top: 5rem;
+	  }
 
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--accent-color);
-        }
+	  .contact-info h3 {
+	      font-size: 1.5rem;
+	      margin-bottom: 2rem;
+	      color: var(--accent-color);
+	  }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease; /* Increased transition duration */
-        }
-        /* Hover effect for contact-item */
-        .contact-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
-            transition: left 0.5s;
-        }
+	  .contact-icons {
+	      display: flex;
+	      justify-content: start;
+	      gap: 1.5rem;
+	      flex-wrap: wrap;
+	      margin-top: 1rem;
+	  }
 
-        .contact-item:hover::before {
-            left: 100%;
-        }
+	  /* Modern icon-only style */
+	  .icon-button {
+	      display: flex;
+	      align-items: center;
+	      justify-content: center;
+	      width: 70px;
+	      height: 70px;
+	      background: var(--glass-bg);
+	      border: 1px solid var(--glass-border);
+	      border-radius: 15px;
+	      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	      text-decoration: none;
+	      position: relative;
+	      overflow: hidden;
+	  }
 
-        .contact-item:hover {
-            transform: translateY(-10px); /* Same as skill-card */
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-color);
-        }
+	  .icon-button::before {
+	      content: '';
+	      position: absolute;
+	      top: 0;
+	      left: -100%;
+	      width: 100%;
+	      height: 100%;
+	      background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+	      transition: left 0.5s;
+	  }
 
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            width: 30px;
-            text-align: center;
-        }
+	  .icon-button:hover::before {
+	      left: 100%;
+	  }
 
-        .contact-form {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 3rem;
-        }
+	  .icon-button:hover {
+	      transform: translateY(-10px);
+	      box-shadow: var(--shadow-lg);
+	      border-color: var(--accent-color);
+	  }
 
-        .form-group {
-            margin-bottom: 2rem;
-        }
+	  .icon-button i {
+	      font-size: 28px;
+	      color: var(--accent-color);
+	      width: 30px;
+	      text-align: center;
+	  }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
+	  /* Contact Form */
+	  .contact-form {
+	      background: var(--glass-bg);
+	      backdrop-filter: blur(20px);
+	      border: 1px solid var(--glass-border);
+	      border-radius: 20px;
+	      padding: 3rem;
+	  }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            color: var(--text-primary);
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
+	  .form-group {
+	      margin-bottom: 2rem;
+	  }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
-        }
+	  .form-group label {
+	      display: block;
+	      margin-bottom: 0.5rem;
+	      color: var(--text-secondary);
+	      font-weight: 500;
+	  }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
-        .form-group .error-message {
-            color: #ff6b6b;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
+	  .form-group input,
+	  .form-group textarea {
+	      width: 100%;
+	      padding: 1rem;
+	      background: rgba(255, 255, 255, 0.05);
+	      border: 1px solid var(--glass-border);
+	      border-radius: 10px;
+	      color: var(--text-primary);
+	      font-family: inherit;
+	      transition: all 0.3s ease;
+	  }
 
+	  .form-group input:focus,
+	  .form-group textarea:focus {
+	      outline: none;
+	      border-color: var(--accent-color);
+	      box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+	  }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(100px); /* Increased translateY for more obvious effect */
-            transition: opacity 1.5s ease, transform 1.5s ease; /* Adjusted transition duration */
-        }
+	  .form-group input::placeholder,
+	  .form-group textarea::placeholder {
+	      color: rgba(255, 255, 255, 0.4);
+	  }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+	  .form-group .error-message {
+	      color: #ff6b6b;
+	      font-size: 0.85rem;
+	      margin-top: 0.5rem;
+	  }
 
+	  /* Animations */
+	  .fade-in {
+	      opacity: 0;
+	      transform: translateY(100px);
+	      transition: opacity 1.5s ease, transform 1.5s ease;
+	  }
+
+	  .fade-in.visible {
+	      opacity: 1;
+	      transform: translateY(0);
+	  }
+
+	  /* Contact Header (Hero) */
+	  .contact-header {
+	      text-align: center;
+	      margin-bottom: 3rem;
+	      animation: fadeIn 1s ease-in-out;
+	  }
+
+	  .contact-subtitle {
+	      color: #00f6d2;
+	      font-weight: 600;
+	      letter-spacing: 1px;
+	      font-size: 0.85rem;
+	      margin-bottom: 0.5rem;
+	      text-transform: uppercase;
+	  }
+
+	  .contact-title {
+	      font-size: 2.5rem;
+	      font-weight: 700;
+	      background: linear-gradient(90deg, #f8bfc2, #b0f2e6);
+	      -webkit-background-clip: text;
+	      -webkit-text-fill-color: transparent;
+	      margin-bottom: 1rem;
+	  }
+
+	  .contact-description {
+	      font-size: 1rem;
+	      color: rgba(255, 255, 255, 0.8);
+	      max-width: 600px;
+	      margin: 0 auto;
+	  }
+
+	  /* Reusable Content Card (optional for projects/testimonials/blog) */
+	  .content-card {
+	      background: var(--glass-bg);
+	      backdrop-filter: blur(20px);
+	      border: 1px solid var(--glass-border);
+	      border-radius: 20px;
+	      padding: 2rem;
+	      position: relative;
+	      overflow: hidden;
+	      transition: all 0.4s ease;
+	  }
+
+	  .content-card::before {
+	      content: '';
+	      position: absolute;
+	      top: 0;
+	      left: -100%;
+	      width: 100%;
+	      height: 100%;
+	      background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+	      transition: left 0.5s;
+	  }
+
+	  .content-card:hover::before {
+	      left: 100%;
+	  }
+
+	  .content-card:hover {
+	      transform: translateY(-10px);
+	      box-shadow: var(--shadow-lg);
+	      border-color: var(--accent-color);
+	  }
+
+	  .content-card h3 {
+	      font-size: 1.3rem;
+	      color: var(--accent-color);
+	      margin-bottom: 0.5rem;
+	  }
+
+	  .content-card p {
+	      font-size: 0.9rem;
+	      color: var(--text-secondary);
+	      margin-bottom: 1rem;
+	  }
+
+	  .content-card .date {
+	      font-size: 0.8rem;
+	      color: rgba(255, 255, 255, 0.6);
+	  }
+
+	  .content-card .link {
+	      display: inline-flex;
+	      align-items: center;
+	      gap: 0.5rem;
+	      padding: 0.5rem 1rem;
+	      background: transparent;
+	      border: 1px solid var(--accent-color);
+	      border-radius: 25px;
+	      color: var(--accent-color);
+	      text-decoration: none;
+	      font-size: 0.9rem;
+	      transition: all 0.3s ease;
+	      margin-top: 1rem;
+	  }
+
+	  .content-card .link:hover {
+	      background: var(--accent-color);
+	      color: white;
+	      transform: translateY(-2px);
+	  }
         /* Responsive Design */
         @media (max-width: 1024px) {
             .about-content {
@@ -2058,70 +2170,68 @@
     </section>
     
     <section class="section contact" id="contact">
-        <div class="section-container">
-            <div class="section-header fade-in">
-                <div class="section-subtitle">Get In Touch</div>
-                <h2 class="section-title">Let's Collaborate</h2>
-                <p class="section-description">
-                    Ready to transform education and empower minds? Let's connect.
-                </p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>thearkacademy420@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+234-7030621774</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Lagos, Nigeria</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/olukunle-samson-oluwatosin" target="_blank">linkedin.com/in/olukunle-samson-oluwatosin</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/OlukunleSamson" target="_blank">github.com/OlukunleSamson</a>
-                    </div>
-                </div>
-                <form class="contact-form fade-in" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
-                        <div class="error-message" id="nameError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                        <div class="error-message" id="emailError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="AI Collaboration" required>
-                        <div class="error-message" id="subjectError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
-                        <div class="error-message" id="messageError"></div>
-                    </div>
-                    <button type="submit" class="cta-button">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 1rem;">
-                        <em>(This form uses client-side validation. For a working backend, consider Formspree or EmailJS integration.)</em>
-                    </p>
-                </form>
-            </div>
-        </div>
-    </section>
+	     <div class="section-container">
+	           <div class="contact-header fade-in">
+		             <p class="contact-subtitle">GET IN TOUCH</p>
+		             <h2 class="contact-title">Let's Collaborate</h2>
+		             <p class="contact-description">
+		                 Ready to transform education and empower minds? Let's connect.
+		             </p>
+		         </div>
+
+	         <!-- FORM FIRST -->
+	         <form class="contact-form fade-in" id="contactForm">
+	             <h3>Send a Message</h3>
+	             <div class="form-group">
+	                 <label for="name">Your Name</label>
+	                 <input type="text" id="name" name="name" placeholder="John Doe" required>
+	                 <div class="error-message" id="nameError"></div>
+	             </div>
+	             <div class="form-group">
+	                 <label for="email">Your Email</label>
+	                 <input type="email" id="email" name="email" placeholder="john@example.com" required>
+	                 <div class="error-message" id="emailError"></div>
+	             </div>
+	             <div class="form-group">
+	                 <label for="subject">Subject</label>
+	                 <input type="text" id="subject" name="subject" placeholder="AI Collaboration" required>
+	                 <div class="error-message" id="subjectError"></div>
+	             </div>
+	             <div class="form-group">
+	                 <label for="message">Message</label>
+	                 <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
+	                 <div class="error-message" id="messageError"></div>
+	             </div>
+	             <button type="submit" class="cta-button">
+	                 <i class="fas fa-paper-plane"></i>
+	                 Send Message
+	             </button>
+	             <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 1rem;">
+	                 <em>(This form uses client-side validation. For a working backend, consider Formspree or EmailJS integration.)</em>
+	             </p>
+	         </form>
+
+	         <!-- CONTACT ICONS BELOW THE FORM -->
+	         <div class="contact-info fade-in">
+	             <h3 style="text-align: center;">Reach Out</h3>
+	             <div class="contact-icons">
+	                 <a href="mailto:thearkacademy420@gmail.com" class="icon-button" title="Email">
+	                     <i class="fas fa-envelope"></i>
+	                 </a>
+	                 <a href="https://www.linkedin.com/in/olukunle-samson-oluwatosin" class="icon-button" title="LinkedIn" target="_blank">
+	                     <i class="fab fa-linkedin-in"></i>
+	                 </a>
+	                 <a href="tel:+2347030621774" class="icon-button" title="Call">
+	                     <i class="fas fa-phone"></i>
+	                 </a>
+	                 <a href="https://www.google.com/maps?q=Lagos,+Nigeria" class="icon-button" title="Location" target="_blank">
+	                     <i class="fas fa-map-marker-alt"></i>
+	                 </a>
+	             </div>
+	         </div>
+	     </div>
+	 </section>
+
     </main>
 
     <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
@@ -2405,6 +2515,7 @@
     </script>
 </body>
 </html>
+
 
 
 
