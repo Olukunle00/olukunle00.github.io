@@ -6,7 +6,7 @@
     <title>Olukunle Portfolio - AI & Education Portfolio</title>
     <meta name="description" content="Olukunl Samson Oluwatosin: AI Technology Expert, Lead Tutor, Teachers Trainer, and Edtechpreneur. Empowering education and youth development with innovative AI solutions.">
     <meta name="keywords" content="AI, Artificial Intelligence, Education, Edtech, Teacher Trainer, Youth Mentorship, Online Teaching, Portfolio, Olukunle Samson Oluwatosin">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="YOUR_PORTFOLIO_URL_HERE">
     <meta property="og:title" content="Olukunle (Samson) Oluwatosin - AI & Education Portfolio">
@@ -16,7 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-        
+
         :root {
             /* Dark Mode Colors */
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -206,9 +206,16 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            /* PRIMARY BACKGROUND IMAGE INSERTION POINT FOR HOME SECTION */
-            background: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/refs/heads/main/images/ai1.jpg') no-repeat center center / cover;
             overflow: hidden;
+        }
+
+        .hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind the overlay and content */
         }
 
         .hero::before {
@@ -226,10 +233,33 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 1400px; /* Increased max-width for side-by-side layout */
+            width: 100%; /* Ensure it takes full width of its parent */
             padding: 0 2rem;
-            opacity: 0; /* Added for fade-in animation */
-            animation: fadeInUp 1s ease 1s forwards; /* Added for fade-in animation */
+            display: flex; /* Enable flexbox for side-by-side */
+            flex-direction: row; /* Default to row on desktop */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Align items vertically */
+            gap: 4rem; /* Space between text and AI visual */
+        }
+
+        .hero-text-container {
+            flex: 1; /* Take available space */
+            text-align: left; /* Align text to the left */
+            padding-right: 2rem; /* Add some padding to the right of the text */
+            opacity: 0; /* Initial state for fade-in */
+            animation: fadeInUp 1s ease 0.5s forwards; /* Apply fade-in animation */
+        }
+
+        .hero-ai-visual-container {
+            flex: 1; /* Take available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Ensure it takes full height for vertical centering */
+            min-height: 300px; /* Minimum height for the visual */
+            opacity: 0; /* Initial state for fade-in */
+            animation: fadeInScale 1s ease 1s forwards; /* Apply fade-in and scale animation */
         }
 
         .hero-subtitle {
@@ -242,7 +272,7 @@
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 900;
             margin-bottom: 1.5rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4ecdc4 100%);
@@ -250,6 +280,21 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1.1;
+            position: relative; /* Needed for ::after positioning */
+            display: inline-block; /* Ensure it takes only content width for caret */
+        }
+
+        /* Typing effect cursor */
+        .hero-title::after {
+            content: '|';
+            display: inline-block;
+            color: var(--accent-color); /* Visible color for the caret */
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
         }
 
         .hero-description {
@@ -288,8 +333,7 @@
             display: flex;
             gap: 2rem;
             justify-content: center;
-            opacity: 0;
-            animation: fadeInUp 1s ease 1.5s forwards;
+            /* Removed direct animation property here, controlled by fade-in class */
             flex-wrap: wrap;
         }
 
@@ -342,6 +386,17 @@
             color: white;
         }
 
+        /* New pulse animation for buttons */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(78, 205, 196, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(78, 205, 196, 0); }
+        }
+        .cta-button.pulsing {
+            animation: pulse 2s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Slower, more subtle pulse */
+        }
+
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -350,6 +405,18 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        /* New animation for AI visual */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
@@ -393,13 +460,13 @@
          #about {
             /* BACKGROUND IMAGE INSERTION POINT FOR EXPERIENCE SECTION */
             background-image: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/refs/heads/main/images/background.jpg');
-         }    
+         }
 
         #experience {
             /* BACKGROUND IMAGE INSERTION POINT FOR EXPERIENCE SECTION */
             background-image: url('https://unique-pen.github.io/images/picture3.jpeg');
         }
-        
+
          #skills {
             /* BACKGROUND IMAGE INSERTION POINT FOR EXPERIENCE SECTION */
             background-image: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/refs/heads/main/images/ai4.jpg');
@@ -412,13 +479,13 @@
         #services { /* Renamed from #courses */
             background-image: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/refs/heads/main/images/ai4.jpg');
         }
-        
+
         /* #portfolio section removed */
             #testimonials-section { /* Renamed from #testimonials */
             /* BACKGROUND IMAGE INSERTION POINT FOR TESTIMONIALS SECTION */
             background-image: url('https://unique-pen.github.io/images/background.jpeg');
         }
-        
+
         #contact {
             background-image: url('https://raw.githubusercontent.com/Unique-pen/unique-pen.github.io/refs/heads/main/images/picture.jpg');
         }
@@ -824,7 +891,7 @@
             font-weight: bold;
             overflow: hidden; /* Ensure image fits within avatar */
         }
-        
+
         .author-avatar img {
             width: 100%;
             height: 100%;
@@ -1061,8 +1128,8 @@
 	  /* Animations */
 	  .fade-in {
 	      opacity: 0;
-	      transform: translateY(100px);
-	      transition: opacity 1.5s ease, transform 1.5s ease;
+	      transform: translateY(30px); /* Reduced initial Y for smoother fade-in */
+	      transition: opacity 1s ease, transform 1s ease; /* Faster transition for quicker appearance */
 	  }
 
 	  .fade-in.visible {
@@ -1151,7 +1218,6 @@
 	      font-size: 0.8rem;
 	      color: rgba(255, 255, 255, 0.6);
 	  }
-
 	  .content-card .link {
 	      display: inline-flex;
 	      align-items: center;
@@ -1172,6 +1238,7 @@
 	      color: white;
 	      transform: translateY(-2px);
 	  }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .about-content {
@@ -1183,18 +1250,18 @@
             .about-image {
                 order: 1; /* Place image before text on mobile */
             }
-            
+
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            
+
             .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(2, 1fr); /* Changed from 4 to 2 for better mobile layout */
             }
             /* Adjusted gap for nav links on medium screens */
             .nav-links {
-                gap: 0.8rem; 
+                gap: 0.8rem;
             }
         }
 
@@ -1214,12 +1281,12 @@
             .section {
                 padding: 5rem 5%;
             }
-            
+
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .nav-links {
                 display: none; /* Hidden by default */
                 flex-direction: column;
@@ -1244,11 +1311,11 @@
             .hamburger {
                 display: flex; /* Show hamburger on mobile */
             }
-            
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .skills-grid,
             .portfolio-grid, /* Renamed */
             .experience-grid,
@@ -1444,7 +1511,7 @@
         .hero-media img:hover, .hero-media video:hover {
             transform: scale(1.03);
         }
-        
+
         /* About Image */
         .about-image {
             text-align: center;
@@ -1629,7 +1696,7 @@
     </div>
 
     <div class="cursor"></div>
-    
+
     <div class="progress-bar"></div>
 <nav class="nav" id="navbar">
         <div class="nav-container">
@@ -1639,7 +1706,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Expertise</a></li>
-                <li><a href="#speaking-events">Engagement</a></li>
+                <li><li><a href="#speaking-events">Engagement</a></li></li>
                 <li><a href="#testimonials-section">Testimonials</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -1657,21 +1724,27 @@
 
 
     <section class="hero" id="home">
+        <canvas id="heroCanvas" class="hero-canvas"></canvas> <!-- New canvas for Three.js -->
         <div class="hero-content">
-            <h3 class="hero-title">Olukunle Oluwatosin</h3>
-               <div class="hero-subtitle">AI Enthusiast | Lead Tutor | Teachers Trainer | Edtechpreneur</div>
-            <p class="hero-description">
-                <span>Empowering the next generation through AI, education, and purpose-driven mentorship.</span>
-            </p>
-            <div class="hero-cta">
-                <a href="#speaking-events" class="cta-button">
-                    <i class="fas fa-briefcase"></i>
-                    View Engagement
-                </a>
-                <a href="#contact" class="cta-button cta-secondary">
-                    <i class="fas fa-envelope"></i>
-                    Let's Connect
-                </a>
+            <div class="hero-text-container"> <!-- New container for text -->
+                <h3 class="hero-title" id="dynamicTitle"></h3> <!-- Changed to dynamic title -->
+                <div class="hero-subtitle fade-in" style="transition-delay: 0.5s;">AI Enthusiast | Lead Tutor | Teachers Trainer | Edtechpreneur</div>
+                <p class="hero-description fade-in" style="transition-delay: 1s;">
+                    <span>Empowering the next generation through AI, education, and purpose-driven mentorship.</span>
+                </p>
+                <div class="hero-cta fade-in" style="transition-delay: 1.5s;">
+                    <a href="#speaking-events" class="cta-button pulsing">
+                        <i class="fas fa-briefcase"></i>
+                        View Engagement
+                    </a>
+                    <a href="#contact" class="cta-button cta-secondary pulsing">
+                        <i class="fas fa-envelope"></i>
+                        Let's Connect
+                    </a>
+                </div>
+            </div>
+            <div class="hero-ai-visual-container">
+                <!-- The AI figure will be rendered within the main heroCanvas, positioned relative to this container's conceptual space -->
             </div>
         </div>
     </section>
@@ -1783,8 +1856,8 @@
                 <div class="experience-card fade-in">
                     <h3>Community Manager/Head of Training</h3>
                     <p>GMIND AI</p>
-                    <p class="duration">Apr 2025 - Present · 4 mos</p>
-                    <p>United States · Hybrid</p>
+                    <p class="duration">Apr 2025 - Present 路 4 mos</p>
+                    <p>United States 路 Hybrid</p>
                     <ul>
                         <li>Community development</li>
                         <li>Program management</li>
@@ -1794,8 +1867,8 @@
                 <div class="experience-card fade-in">
                     <h3>Lead Coach</h3>
                     <p>The Ark Academy Online</p>
-                    <p class="duration">Feb 2022 - Present · 3 yrs 6 mos</p>
-                    <p>Mowe, Ogun State · Remote</p>
+                    <p class="duration">Feb 2022 - Present 路 3 yrs 6 mos</p>
+                    <p>Mowe, Ogun State 路 Remote</p>
                     <ul>
                         <li>Helped over 2000 teens and young people find their purpose.</li>
                         <li>Trained and certified over 30 young people in the Online mentoring program.</li>
@@ -1804,8 +1877,8 @@
                 <div class="experience-card fade-in">
                     <h3>Teacher</h3>
                     <p>Maravilla Schools</p>
-                    <p class="duration">Oct 2019 - Present · 5 yrs 10 mos</p>
-                    <p>Lagos, Nigeria · On-site</p>
+                    <p class="duration">Oct 2019 - Present 路 5 yrs 10 mos</p>
+                    <p>Lagos, Nigeria 路 On-site</p>
                     <ul>
                         <li>Utilized leadership and data analysis skills in teaching.</li>
                     </ul>
@@ -1926,7 +1999,7 @@
                 <div class="certification-card fade-in">
                     <h3>Teacher Of English To Speakers Of Other Languages (TEFL)</h3>
                     <p>Teacher Record</p>
-                    <p class="issued-date">Issued Jan 2025 · Expires Jan 2035</p>
+                    <p class="issued-date">Issued Jan 2025 路 Expires Jan 2035</p>
                     <p>Credential ID TR4095453622</p>
                     <a href="#" class="project-link" style="margin-top: 1rem;">Show Credential</a>
                 </div>
@@ -2168,7 +2241,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="section contact" id="contact">
 	     <div class="section-container">
 	           <div class="contact-header fade-in">
@@ -2238,17 +2311,21 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         // Loading Animation
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loadingOverlay').classList.add('hidden');
-            }, 1000);
+                // Start typing after the loading overlay is hidden and a small buffer
+                setTimeout(typeWriter, 500);
+            }, 1000); // Loading overlay hides after 1s
+            initThreeJS(); // Initialize Three.js after load
         });
 
         // Custom Cursor
         const cursor = document.querySelector('.cursor');
-        const clickableElements = document.querySelectorAll('a, button, .skill-card, .project-card, .stat-card, .experience-card, .certification-card, .service-card, .pricing-card, .testimonial-card, .contact-item, .content-card'); 
+        const clickableElements = document.querySelectorAll('a, button, .skill-card, .project-card, .stat-card, .experience-card, .certification-card, .service-card, .pricing-card, .testimonial-card, .contact-item, .content-card');
 
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
@@ -2284,7 +2361,7 @@
         function activateNavLink() {
             let currentActive = null;
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - (navbar.offsetHeight / 2); 
+                const sectionTop = section.offsetTop - (navbar.offsetHeight / 2);
                 const sectionBottom = sectionTop + section.offsetHeight;
                 if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
                     currentActive = section.id;
@@ -2329,37 +2406,6 @@
             navLinksContainer.classList.toggle('active');
         });
 
-        // Removed Dark/Light Mode Toggle JavaScript
-        /*
-        const themeToggle = document.getElementById('checkbox');
-        const currentTheme = localStorage.getItem('theme');
-        const isMobile = window.innerWidth <= 768; 
-
-        if (isMobile) {
-            document.body.classList.remove('light-mode');
-            localStorage.setItem('theme', 'dark-mode');
-            themeToggle.checked = false; 
-            themeToggle.disabled = true; 
-        } else {
-            if (currentTheme) {
-                document.body.classList.add(currentTheme);
-                if (currentTheme === 'light-mode') {
-                    themeToggle.checked = true;
-                }
-            }
-
-            themeToggle.addEventListener('change', () => {
-                if (themeToggle.checked) {
-                    document.body.classList.add('light-mode');
-                    localStorage.setItem('theme', 'light-mode');
-                } else {
-                    document.body.classList.remove('light-mode');
-                    localStorage.setItem('theme', 'dark-mode');
-                }
-            });
-        }
-        */
-
         // Fade In Animation
         const observerOptions = {
             threshold: 0.1,
@@ -2374,6 +2420,7 @@
             });
         }, observerOptions);
 
+        // Select all elements with the 'fade-in' class
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
@@ -2387,15 +2434,15 @@
                     const target = parseInt(counter.getAttribute('data-target'));
                     const increment = target / 100;
                     let current = 0;
-                    let animationStarted = false; 
+                    let animationStarted = false;
 
                     const updateCounter = () => {
                         if (current < target) {
                             current += increment;
                             counter.textContent = Math.ceil(current);
-                            requestAnimationFrame(updateCounter); 
+                            requestAnimationFrame(updateCounter);
                         } else {
-                            counter.textContent = target + '+'; 
+                            counter.textContent = target + '+';
                             counterObserver.unobserve(counter);
                         }
                     };
@@ -2415,7 +2462,7 @@
         // Contact Form Validation
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
 
             let isValid = true;
 
@@ -2466,7 +2513,7 @@
             if (isValid) {
                 const submitButton = this.querySelector('button[type="submit"]');
                 const originalText = submitButton.innerHTML;
-                
+
                 submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitButton.disabled = true;
 
@@ -2512,32 +2559,260 @@
             /* Removed body.light-mode .keyboard-navigation *:focus */
         `;
         document.head.appendChild(style);
+
+        // Three.js Particle Background and AI Figure
+        let scene, camera, renderer, particles, particleGeometry, particleMaterial;
+        let aiGroup; // Group to hold the AI visual (nodes and connections)
+        let nodes = [];
+        let connections = [];
+        const numNodes = 50; // Number of spheres for the AI figure
+        const nodeRadius = 0.08;
+        const connectionDistance = 1.5; // Max distance for a connection between nodes
+
+        let mouseX = 0, mouseY = 0;
+        let windowHalfX = window.innerWidth / 2;
+        let windowHalfY = window.innerHeight / 2;
+
+        function initThreeJS() {
+            const canvas = document.getElementById('heroCanvas');
+
+            // Scene
+            scene = new THREE.Scene();
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Particles (existing background)
+            const particleCount = 2000;
+            particleGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+
+            const color1 = new THREE.Color(0x667eea); // Primary gradient start
+            const color2 = new THREE.Color(0x764ba2); // Primary gradient end
+            const color3 = new THREE.Color(0x4ecdc4); // Accent color
+
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3] = (Math.random() * 2 - 1) * 10; // x
+                positions[i * 3 + 1] = (Math.random() * 2 - 1) * 10; // y
+                positions[i * 3 + 2] = (Math.random() * 2 - 1) * 10; // z
+
+                const mixFactor = Math.random();
+                const color = new THREE.Color();
+                if (mixFactor < 0.5) {
+                    color.lerpColors(color1, color2, mixFactor * 2);
+                } else {
+                    color.lerpColors(color2, color3, (mixFactor - 0.5) * 2);
+                }
+                colors[i * 3] = color.r;
+                colors[i * 3 + 1] = color.g;
+                colors[i * 3 + 2] = color.b;
+            }
+
+            particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            particleMaterial = new THREE.PointsMaterial({
+                size: 0.05,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending,
+                sizeAttenuation: true
+            });
+
+            particles = new THREE.Points(particleGeometry, particleMaterial);
+            scene.add(particles);
+
+            // Create the new AI visual (nodes and connections)
+            createAIVisual();
+
+            // Initial positioning of AI model (will be adjusted by onWindowResize)
+            onWindowResize(); // Call once to set initial position
+
+            // Mouse interaction
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            window.addEventListener('resize', onWindowResize, false);
+
+            animateThreeJS();
+        }
+
+        function createAIVisual() {
+            aiGroup = new THREE.Group();
+            scene.add(aiGroup);
+
+            const nodeGeometry = new THREE.SphereGeometry(nodeRadius, 16, 16);
+
+            // Create nodes (spheres)
+            for (let i = 0; i < numNodes; i++) {
+                const nodeMaterial = new THREE.MeshStandardMaterial({
+                    color: new THREE.Color().setHSL(Math.random(), 0.8, 0.6), // Random vibrant colors
+                    emissive: new THREE.Color().setHSL(Math.random(), 0.8, 0.6),
+                    emissiveIntensity: 0.5 + Math.random() * 0.5, // Varied initial glow
+                    metalness: 0.2,
+                    roughness: 0.8,
+                    transparent: true,
+                    opacity: 0.7 + Math.random() * 0.3
+                });
+                const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+
+                // Random position within a cube for the cluster
+                node.position.set(
+                    (Math.random() * 2 - 1) * 2,
+                    (Math.random() * 2 - 1) * 2,
+                    (Math.random() * 2 - 1) * 2
+                );
+                nodes.push(node);
+                aiGroup.add(node);
+            }
+
+            // Create connections (lines) between nearby nodes
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: 0x4ecdc4, // Accent color for lines
+                transparent: true,
+                opacity: 0.1 // Start with low opacity
+            });
+
+            for (let i = 0; i < numNodes; i++) {
+                for (let j = i + 1; j < numNodes; j++) {
+                    const nodeA = nodes[i];
+                    const nodeB = nodes[j];
+
+                    const distance = nodeA.position.distanceTo(nodeB.position);
+
+                    if (distance < connectionDistance) {
+                        const points = [];
+                        points.push(nodeA.position);
+                        points.push(nodeB.position);
+                        const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+                        const line = new THREE.Line(lineGeometry, lineMaterial);
+                        line.userData.nodes = [nodeA, nodeB]; // Store references to connected nodes
+                        connections.push(line);
+                        aiGroup.add(line);
+                    }
+                }
+            }
+
+            // Add a light source to the group, centered
+            const groupLight = new THREE.PointLight(0x4ecdc4, 1.5, 10); // Brighter light for the group
+            groupLight.position.set(0, 0, 0); // Center of the group
+            aiGroup.add(groupLight);
+        }
+
+
+        function onDocumentMouseMove(event) {
+            mouseX = (event.clientX - windowHalfX) * 0.001;
+            mouseY = (event.clientY - windowHalfY) * 0.001;
+        }
+
+        function onWindowResize() {
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            // Adjust AI model position based on current aspect ratio and desired layout
+            if (aiGroup) {
+                if (window.innerWidth > 1024) { // Desktop view (side-by-side)
+                    aiGroup.position.x = 2.5; // Position to the right
+                    aiGroup.position.y = 0;
+                    aiGroup.scale.set(1, 1, 1); // Reset scale for desktop
+                } else { // Mobile view (stacked)
+                    aiGroup.position.x = 0; // Center horizontally
+                    aiGroup.position.y = -2; // Position below the text content
+                    aiGroup.scale.set(0.7, 0.7, 0.7); // Scale down for mobile
+                }
+            }
+        }
+
+        function animateThreeJS() {
+            requestAnimationFrame(animateThreeJS);
+
+            // Animate background particles
+            if (particles) {
+                particles.rotation.x += 0.0005;
+                particles.rotation.y += 0.001;
+            }
+
+            // Animate AI Group (nodes and connections)
+            if (aiGroup) {
+                aiGroup.rotation.y += 0.005; // Rotate the whole cluster
+                aiGroup.rotation.x += 0.002;
+
+                nodes.forEach((node, index) => {
+                    // Subtle floating motion for each node
+                    node.position.y += Math.sin(Date.now() * 0.001 + index * 0.1) * 0.005;
+                    node.position.x += Math.cos(Date.now() * 0.001 + index * 0.1) * 0.005;
+
+                    // Subtle pulse in emissive intensity for each node
+                    node.material.emissiveIntensity = 0.5 + Math.sin(Date.now() * 0.002 + index * 0.2) * 0.3;
+                });
+
+                // Update line opacities based on node proximity/animation
+                connections.forEach(line => {
+                    const nodeA = line.userData.nodes[0];
+                    const nodeB = line.userData.nodes[1];
+                    const distance = nodeA.position.distanceTo(nodeB.position);
+
+                    // Make lines more opaque when nodes are closer
+                    line.material.opacity = Math.max(0, 0.5 - (distance / connectionDistance) * 0.4);
+                });
+            }
+
+            // Make camera subtly move towards mouse for background effect
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+
+        // New: Dynamic Title Typing Effect
+        const dynamicTitleElement = document.getElementById('dynamicTitle');
+        const phrases = [
+            "FutureForge AI Education",
+            "Empowering Minds with AI",
+            "Innovating Learning for Tomorrow"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100; // milliseconds per character
+        const deletingSpeed = 50;
+        const pauseBeforeDelete = 1500; // milliseconds
+        const pauseBeforeType = 500; // milliseconds
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                dynamicTitleElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                dynamicTitleElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let currentSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                currentSpeed = pauseBeforeDelete;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                currentSpeed = pauseBeforeType;
+            }
+
+            setTimeout(typeWriter, currentSpeed);
+        }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
